@@ -1,5 +1,5 @@
 # Sistem Infomasi Penjualan Barang Elektronik
-Sistem Penjualan ini dibuat untuk memudahkan customer membeli barang elektronik tanpa harus keluar rumah.
+Sistem Penjualan ini dibuat untuk memudahkan customer membeli barang elektronik tanpa harus keluar rumah, sehingga dapat melakukan transaksi dan melakukan pembayaran dengan satu klik tombol saja.
 
 ## User
     * Admin
@@ -12,7 +12,7 @@ Admin :
     -   Password
     -   Ubah Password
 -   Input Stok Barang
--   Data Stok
+-   Data Stok Barang
 -   Return Barang jika pesanan dalam kondisi rusak waktu tiba di tangan customer / tidak sesuai dengan pesanan
     -   Nama Customer
     -   Tanggal Pembelian
@@ -62,4 +62,5 @@ Customer :
     -   Kurir
 -   Return Barang
     -   Nama Produk
+    -   Kode Produk
     -   Tanggal Pembelian
