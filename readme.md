@@ -11,12 +11,14 @@ Admin :
     -   Username
     -   Password
     -   Ubah Password
--   Input Stok Barang
--   Data Stok Barang
--   Return Barang jika pesanan dalam kondisi rusak waktu tiba di tangan customer / tidak sesuai dengan pesanan
+-   Input Data Ongkir
+-   Input Data Barang
+-   Input Barang Masuk
+-   Approve dan Cek Status Return Barang
     -   Nama Customer
     -   Tanggal Pembelian
     -   Nama Produk
+-   Laporan Stok Barang
 -   Laporan Penjualan
     -   Nama Produk
     -   Jumlah Produk
@@ -25,6 +27,7 @@ Admin :
     -   Ongkos Kirim
     -   Harga
     -   Kurir
+-   Laporan Return Barang
 
 ## Mobile
 Customer :
