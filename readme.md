@@ -28,6 +28,7 @@ Admin :
     -   Harga
     -   Kurir
 -   Laporan Return Barang
+-   Data Customer
 
 ## Mobile
 Customer :
