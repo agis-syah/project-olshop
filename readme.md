@@ -29,6 +29,7 @@ Admin :
     -   Kurir
 -   Laporan Return Barang
 -   Data Customer
+-   Data Supplier
 
 ## Mobile
 Customer :
