@@ -15,7 +15,7 @@
             <img src="{{asset("dist/img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">
+                <a href="profil" class="d-block">
                     {{ ucfirst(auth::user()->name)}}
                 </a>
             </div>
@@ -36,37 +36,37 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="data" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Barang</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <a href="barang" class="nav-link">
                                     <i class="fas fa-check-circle nav-icon"></i>
                                     <p>Barang Masuk</p>
                                 </a>
                             </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="ongkir" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Ongkir</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="return" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Return Barang</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="customer" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Customer</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="supplier" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Supplier</p>
                             </a>
@@ -88,25 +88,33 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="laporanstok" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Stok Barang</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="laporanpenjualan" class="nav-link">
                                     <i class="fas fa-check-circle nav-icon"></i>
                                     <p>Penjualan</p>
                                 </a>
                             </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="laporanreturn" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Return Barang</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+            </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="kalender">
+                        <i class="fas fa-calendar-alt nav-icon"></i>
+                        <p>Kalender</p>
+                    </a>
+               </li>
             </ul>
 
             <ul class="nav nav-pills nav-sidebar flex-column">
