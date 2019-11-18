@@ -38,7 +38,7 @@
                             <th>Merk</th>
                             <th>Jenis Barang</th>
                             <th>Tgl Masuk</th>
-                            <th>Stok Barang</th>
+                            <th>Qty</th>
                             <th>Harga Total</th>
                             <th colspan="2">Action</th>
         

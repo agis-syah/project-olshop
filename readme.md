@@ -36,7 +36,7 @@ Customer :
 -   Register
     - Username
     - Email
-    - Accept Policy
+    - Accept
     - Verifikasi ke Email Customer
 -   Login
     -   Username

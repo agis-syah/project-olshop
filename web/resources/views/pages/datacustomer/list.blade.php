@@ -36,7 +36,7 @@
                             <th>Alamat</th>
                             <th>Telepon</th>
                             <th>Jenis Kelamin</th>
-                            <th colspan="1">Action</th>
+                            <th colspan="2">Action</th>
         
                         </tr>
                     </thead>
@@ -47,6 +47,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td> <button class="btn btn-primary btn-block"><i class="fa fa-undo"> Reset Password</i></button></td>
                                 <td>
                                 <form action="" method="POST">
                                     @method("delete")

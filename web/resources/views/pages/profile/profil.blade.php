@@ -19,7 +19,7 @@
     </div>
     <div class="content">
         <div class="card">
-            <div class="card-header bg-warning text-white">
+            <div class="card-header text-white" style="background:grey;">
                 <h3 class="card-title">Form Profile</h3>
             </div>
             <div class="card-body">

@@ -27,9 +27,9 @@
             <form action="" method="POST" autocomplete="off">
                 @csrf
                 <div class="form-group">
-                    <label for="kode">Kode Barang</label>
-                    <input type="text" class="form-control @error("kode") is-invalid @enderror" name="kode" value="">
-                    @error("kode")
+                    <label for="merk">Merk</label>
+                    <input type="text" class="form-control @error("merk") is-invalid @enderror" name="merk" value="">
+                    @error("merk")
                         <div class="invalid-feedback">
                             {{$message}}
                         </div>
@@ -41,15 +41,6 @@
                     @error("nama")
                         <div class="invalid-feedback">
                         {{$message}}
-                        </div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="merk">Merk</label>
-                    <input type="text" class="form-control @error("merk") is-invalid @enderror" name="merk" value="">
-                    @error("merk")
-                        <div class="invalid-feedback">
-                            {{$message}}
                         </div>
                     @enderror
                 </div>
@@ -84,7 +75,7 @@
                 </div>
                 <div class="form-group">
                     <label for="detail">Detail Produk</label>
-                    <input type="text" class="form-control @error("detail") is-invalid @enderror" name="detail" value="">
+                    <textarea type="text" class="form-control @error("detail") is-invalid @enderror" name="detail" value=""></textarea>
                     @error("detail")
                         <div class="invalid-feedback">
                             {{$message}}

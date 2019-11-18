@@ -37,7 +37,8 @@
                             <th>Tgl Beli</th>
                             <th>Jumlah Barang</th>
                             <th>Harga</th>
-                            <th>Status Bayar</th>
+                            <th>Status</th>
+                            <th>Detail</th>
                             <th colspan="2">Action</th>
         
                         </tr>
@@ -51,6 +52,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td><a href="detail" class="btn btn-primary"><i class="fa fa-eye"> Lihat</i></a></td>
                                 <td><a href="" class="btn btn-warning btn-block">Selesai</a></td>
                                 <td>
                                 <form action="" method="POST">
