@@ -46,8 +46,8 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
+                                <td>1</td>
+                                <td>Acer</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
