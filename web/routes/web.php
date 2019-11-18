@@ -68,7 +68,10 @@ Route::middleware("auth")->group(function () {
         });
     Route::get('/password', function () {
         return view('pages.profile.password');
-         });
+        });
+    Route::get('/detail', function () {
+        return view('pages.laporan.detail');
+        });
 });
 Route::get("/register",function(){
     return view('pages.register');
@@ -79,5 +82,3 @@ Route::get("/login",function(){
 Route::get("/reset",function(){
     return view('pages.reset');
 })->name("reset")->middleware("guest");
-
-

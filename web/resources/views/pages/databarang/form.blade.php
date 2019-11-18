@@ -27,6 +27,15 @@
             <form action="" method="POST" autocomplete="off">
                 @csrf
                 <div class="form-group">
+                        <label for="kode">Kode Barang</label>
+                        <input type="text" class="form-control @error("kode") is-invalid @enderror" name="kode" value="">
+                        @error("kode")
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
+                <div class="form-group">
                     <label for="merk">Merk</label>
                     <input type="text" class="form-control @error("merk") is-invalid @enderror" name="merk" value="">
                     @error("merk")

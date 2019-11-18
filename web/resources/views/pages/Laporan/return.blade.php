@@ -31,7 +31,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No.</th>
                             <th>Nama Customer</th>
                             <th>Kode Beli</th>
                             <th>Tgl Beli</th>
@@ -44,13 +44,13 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>1.</td>
+                                <td>Adit</td>
+                                <td>#201918110001</td>
+                                <td>18 November 2019</td>
+                                <td>1</td>
+                                <td>Rp. 13.000.000</td>
+                                <td>Proses</td>
                                 <td><a href="" class="btn btn-warning btn-block">Selesai</a></td>
                                 <td>
                                 <form action="" method="POST">

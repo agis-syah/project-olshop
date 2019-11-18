@@ -34,7 +34,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No</th>
                             <th>Merk</th>
                             <th>Nama Barang</th>
                             <th>Jenis Barang</th>
@@ -47,13 +47,13 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>1. </td>
+                                <td>Acer</td>
+                                <td>Acer Predator 3000</td>
+                                <td>Laptop</td>
+                                <td>20</td>
+                                <td>Rp. 13.000.000</td>
+                                <td>Rp. 260.000.000</td>
                                 <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
                                 <td>
                                 <form action="" method="POST">

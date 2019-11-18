@@ -92,14 +92,14 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="supplier">Supplier</label>
-                    <input type="text" class="form-control @error("supplier") is-invalid @enderror" name="supplier" value="">
-                    @error("supplier")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
+                        <label for="jenis">Supplier</label>
+                            <select name="jenis" class="form-control">
+                                <option value="Komputer">
+                                    PT. Jaya Abadi</option>
+                                <option value="Laptop">
+                                    PT. Maju Bersama</option>
+                            </select>
+                    </div>
                 <div class="form-group float-right">
                     <button type="submit" class="btn btn-success"><i class="fa fa-save"> Simpan</i></button>
                     <a href="barang" class="btn btn-danger"><i class="fa fa-arrow-left"> Batal</i></a>

@@ -34,7 +34,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No.</th>
                             <th>Provinsi</th>
                             <th>Harga</th>
                             <th colspan="2">Action</th>
@@ -43,9 +43,9 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>1.</td>
+                                <td>Binjai</td>
+                                <td>Rp. 10.000</td>
                                 <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
                                 <td>
                                 <form action="" method="POST">

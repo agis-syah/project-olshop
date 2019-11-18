@@ -31,7 +31,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No.</th>
                             <th>Nama Customer</th>
                             <th>Alamat</th>
                             <th>Telepon</th>
@@ -42,11 +42,11 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>1. </td>
+                                <td>Adit</td>
+                                <td>Jl. Sei Deli, Medan Denai</td>
+                                <td>081922002200</td>
+                                <td>Laki-Laki</td>
                                 <td> <button class="btn btn-primary btn-block"><i class="fa fa-undo"> Reset Password</i></button></td>
                                 <td>
                                 <form action="" method="POST">

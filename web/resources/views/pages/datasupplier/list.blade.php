@@ -34,7 +34,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No.</th>
                             <th>Nama Supplier</th>
                             <th>Alamat</th>
                             <th>Telepon</th>
@@ -45,11 +45,11 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>1.</td>
+                                <td>PT. Jaya Abadi</td>
+                                <td>Gaharu I, Medan</td>
+                                <td>06161619</td>
+                                <td>jayaabadi@gmail.com</td>
                                 <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
                                 <td>
                                 <form action="" method="POST">
