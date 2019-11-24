@@ -47,7 +47,6 @@
                     </thead>
                     <tbody>
                             <tr>
-<<<<<<< HEAD
                                 <td>1. </td>
                                 <td>Acer</td>
                                 <td>Laptop</td>
@@ -55,14 +54,6 @@
                                 <td>18 November 2019</td>
                                 <td>20</td>
                                 <td>Rp. 200.000.000</td>
-=======
-                                <td>1</td>
-                                <td>Acer</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
->>>>>>> ec8aac93a43b123fce0e3574731608636857a1cc
                                 <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
                                 <td>
                                 <form action="" method="POST">

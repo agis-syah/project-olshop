@@ -32,7 +32,6 @@
                 <p>Jenis Barang     : Laptop</p>
                 <p>Merk             : Acer</p>
                 <p>Nama Barang      : Acer Predator 3000</p>
-<<<<<<< HEAD
                 <p> Status          :
                         
                             <select name="status">
@@ -51,13 +50,6 @@
                     </div>
             </div>
             
-=======
-                <p>Status Bayar     : Proses</p>
-            </div>
-            <div class="form-group float-right">
-                <a href="laporanpenjualan" class="btn btn-warning"><i class="fa fa-arrow-left"> Kembali</i></a>
-            </div>
->>>>>>> ec8aac93a43b123fce0e3574731608636857a1cc
         </form>
         </div>
     </div>

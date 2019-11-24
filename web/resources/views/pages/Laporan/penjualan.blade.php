@@ -52,23 +52,7 @@
                                 <td>1</td>
                                 <td>Rp.13.000.000</td>
                                 <td>Proses</td>
-<<<<<<< HEAD
                                 <td><a href="detail" class="btn btn-primary btn-block"><i class="fa fa-eye"> Lihat</i></a></td>
-=======
-                                <td><a href="detail" class="btn btn-primary"><i class="fa fa-eye"> Lihat</i></a></td>
-                                <td>
-                                    <div class="form-group">
-                                            <select name="status" class="form-control">
-                                                <option value="Proses">
-                                                    <a href="#">Proses</a></option>
-                                                <option value="Dikirim">
-                                                    <a href="#">Dikirim</a></option>
-                                                <option value="Selesai">
-                                                    <a href="#">Selesai</a></option>
-                                            </select>
-                                    </div>
-                                </td>
->>>>>>> ec8aac93a43b123fce0e3574731608636857a1cc
                                 <td>
                                 <form action="" method="POST">
                                     @method("delete")

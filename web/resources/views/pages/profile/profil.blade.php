@@ -46,6 +46,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="harga">Tanggal Lahir</label>
+                    <input type="date" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
+                    @error("harga")
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="harga">Jenis Kelamin</label>
                     <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
                     @error("harga")
