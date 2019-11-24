@@ -1,3 +1,7 @@
+
+# ERD
+!.[ERD project-olshop].(erd-project-olshop.jpg)
+
 # Sistem Infomasi Penjualan Barang Elektronik
 Sistem Penjualan ini dibuat untuk memudahkan customer membeli barang elektronik tanpa harus keluar rumah, sehingga dapat melakukan transaksi dan melakukan pembayaran dengan satu klik tombol saja.
 
