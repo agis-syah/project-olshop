@@ -31,7 +31,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No.</th>
                             <th>Nama Customer</th>
                             <th>Kode Beli</th>
                             <th>Nama Barang</th>
@@ -44,13 +44,13 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>1.</td>
+                                <td>Adit</td>
+                                <td>#201911180001</td>
+                                <td>Acer Predator 3000</td>
+                                <td>18 November 2019</td>
+                                <td>Sedikit Lecet Pada Barang</td>
+                                <td>Belum Selesai</td>
                                 <td><a href="" class="btn btn-warning btn-block">Selesai</a></td>
                                 <td>
                                 <form action="" method="POST">

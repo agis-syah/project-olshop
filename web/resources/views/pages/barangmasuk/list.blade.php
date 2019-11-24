@@ -37,6 +37,7 @@
                             <th>NO</th>
                             <th>Merk</th>
                             <th>Jenis Barang</th>
+                            <th>Nama Barang</th>
                             <th>Tgl Masuk</th>
                             <th>Qty</th>
                             <th>Harga Total</th>
@@ -46,12 +47,13 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td>1</td>
+                                <td>1. </td>
                                 <td>Acer</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>Laptop</td>
+                                <td>Acer Predator 3000</td>
+                                <td>18 November 2019</td>
+                                <td>20</td>
+                                <td>Rp. 200.000.000</td>
                                 <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
                                 <td>
                                 <form action="" method="POST">

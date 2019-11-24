@@ -32,11 +32,24 @@
                 <p>Jenis Barang     : Laptop</p>
                 <p>Merk             : Acer</p>
                 <p>Nama Barang      : Acer Predator 3000</p>
-                <p>Status Bayar     : Proses</p>
+                <p> Status          :
+                        
+                            <select name="status">
+                                <option value="Komputer">
+                                    Proses</option>
+                                <option value="Laptop">
+                                    Dikirim</option>
+                                <option value="Gadget">
+                                    Selesai</option>
+                            </select>
+                </p>
+
+                <div class="form-group float-right">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"> Simpan</i></button>
+                        <a href="laporanpenjualan" class="btn btn-danger"><i class="fa fa-arrow-left"> Kembali</i></a>
+                    </div>
             </div>
-            <div class="form-group float-right">
-                <a href="laporanpenjualan" class="btn btn-warning"><i class="fa fa-arrow-left"> Kembali</i></a>
-            </div>
+            
         </form>
         </div>
     </div>

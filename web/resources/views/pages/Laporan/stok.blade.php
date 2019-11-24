@@ -31,12 +31,11 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No. </th>
                             <th>Merk</th>
                             <th>Nama Barang</th>
                             <th>Jenis Barang</th>
                             <th>Stok Barang</th>
-                            <th>Harga</th>
                             <th>Total Harga</th>
                             <th colspan="1">Action</th>
         
@@ -44,13 +43,12 @@
                     </thead>
                     <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>1. </td>
+                                <td>Acer</td>
+                                <td>Acer Predator 3000</td>
+                                <td>Laptop</td>
+                                <td>19</td>
+                                <td>Rp. 247.000.000</td>
                                 <td>
                                 <form action="" method="POST">
                                     @method("delete")
