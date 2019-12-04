@@ -23,73 +23,85 @@
                 <h3 class="card-title">Form Profile</h3>
             </div>
             <div class="card-body">
-            <form action="" method="POST" autocomplete="off">
+            <form action="" method="POST" autocomplete="off" class="row">
                 @csrf
-                <div class="form-group">
-                    <label for="harga">Nama</label>
-                    <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
-                    @error("harga")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
+                <div class="col-md-3">
 
-                <div class="form-group">
-                    <label for="harga">Tempat Tanggal Lahir</label>
-                    <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
-                    @error("harga")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
                 </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="harga">Nama</label>
+                        <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
+                        @error("harga")
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Lahir</label>
+                        <input type="date" class="form-control @error("tanggal") is-invalid @enderror" name="tanggal" value="">
+                        @error("tanggal")
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
 
-                <div class="form-group">
-                    <label for="harga">Tanggal Lahir</label>
-                    <input type="date" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
-                    @error("harga")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control @error("email") is-invalid @enderror" name="email" value="">
+                        @error("email")
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
 
-                <div class="form-group">
-                    <label for="harga">Jenis Kelamin</label>
-                    <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
-                    @error("harga")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
+                    <div class="form-group col-md-12 @error("alamat") is-invalid @enderror">
+                        <label for="alamat">Alamat</label>
+                        <textarea name="alamat" id="alamat"
+                            class="form-control"
+                            cols="30" rows="5">{{ isset($data)?$data->descriptions:old("alamat") }}</textarea>
+                        @error("alamat")
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    
                 </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="telepon">Telepon</label>
+                        <input type="text" class="form-control @error("telepon") is-invalid @enderror" name="telepon" value="">
+                        @error("telepon")
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                        @enderror
+                    </div>
 
-                <div class="form-group">
-                    <label for="harga">Alamat</label>
-                    <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
-                    @error("harga")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
+                    <div class="form-group">
+                        <label for="kelamin">Jenis Kelamin</label>
+                            <select name="kelamin" class="form-control">
+                                <option value="Pria">
+                                    Pria</option>
+                                <option value="Wanita">
+                                    Wanita</option>
+                            </select>
+                    </div>
 
-                <div class="form-group">
-                    <label for="harga">Telepon</label>
-                    <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
-                    @error("harga")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
-                <div class="form-group float-left">
-                    <a href="password" class="btn btn-primary"><i class="fa fa-key"> Ubah Password</i></a>
-                </div>
-                <div class="form-group float-right">
-                    <button type="submit" class="btn btn-success"><i class="fa fa-save"> Simpan</i></button>
-                    <a href="ongkir" class="btn btn-danger"><i class="fa fa-arrow-left"> Batal</i></a>
+                    <div class="form-group">
+                        <a href="password" class="btn btn-primary btn-block"
+                            style="margin-top:48px;"><i class="fa fa-key"> Ubah Password</i></a>
+                    </div>
+
+                    <div class="form-group float-right">
+                        <button type="submit" class="btn btn-success" style="margin-top:30px"><i class="fa fa-save"> Simpan</i></button>
+                        <a href="ongkir" class="btn btn-danger" style="margin-top:30px"><i class="fa fa-arrow-left"> Batal</i></a>
+                    </div>
                 </div>
             </form>
             </div>
