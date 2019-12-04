@@ -30,9 +30,8 @@ Route::middleware("auth")->group(function () {
     Route::get('/customer', function () {
         return view('pages.datacustomer.list');
     });
-    Route::get('/ongkir', function () {
-        return view('pages.ongkir.list');
-    });
+
+    Route::resource('ongkir',"OngkirController");
 
     Route::resource('supplier',"SupplierController");
 
