@@ -33,9 +33,9 @@ Route::middleware("auth")->group(function () {
     Route::get('/ongkir', function () {
         return view('pages.ongkir.list');
     });
-    Route::get('/supplier', function () {
-        return view('pages.datasupplier.list');
-    });
+
+    Route::resource('supplier',"SupplierController");
+
     Route::get('/return', function () {
     return view('pages.returnbarang.list');
     });
