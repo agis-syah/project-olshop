@@ -29,6 +29,10 @@ Route::middleware("auth")->group(function () {
     Route::get('/customer', function () {
         return view('pages.datacustomer.list');
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> f5245e1ca0b0b43f88ab3fe4bb8c1e4ab1e0d9df
     Route::resource('ongkir',"OngkirController");
 
     Route::resource('supplier',"SupplierController");
