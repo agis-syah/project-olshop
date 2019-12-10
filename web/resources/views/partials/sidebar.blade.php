@@ -36,7 +36,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="data" class="nav-link">
+                        <a href="{{ route("databarang.index") }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Barang</p>
                             </a>
@@ -48,7 +48,7 @@
                                 </a>
                             </li>
                         <li class="nav-item">
-                            <a href="ongkir" class="nav-link">
+                            <a href="{{ route("ongkir.index") }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Ongkir</p>
                             </a>
@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="supplier" class="nav-link">
+                            <a href="{{ route("supplier.index") }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Supplier</p>
                             </a>

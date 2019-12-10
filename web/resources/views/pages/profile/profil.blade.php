@@ -30,9 +30,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="harga">Nama</label>
-                        <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
-                        @error("harga")
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control @error("nama") is-invalid @enderror" name="nama" value="">
+                        @error("nama")
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>

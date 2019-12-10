@@ -10,7 +10,7 @@
                 <div class="col-6"><h1>Barang Masuk</h1></div>
                 <div class="col-6">
                 <ul class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="">Home</a></li>
+                    <li class="breadcrumb-item"><a href="home">Home</a></li>
                     <li class="breadcrumb-item active">List Barang Masuk</li>    
                 </ul>    
                 </div>    
@@ -29,12 +29,12 @@
             </div>
             <div class="card-body">
                 <div class="float-right mb-2">
-                <a href="formbarangmasuk" class="btn btn-success"><i class="fa fa-plus"></i>Tambah</a>
+                <a href="{{ route("barangmasuk.create") }}" class="btn btn-success"><i class="fa fa-plus"></i>Tambah</a>
                 </div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>NO</th>
+                            <th>No</th>
                             <th>Merk</th>
                             <th>Jenis Barang</th>
                             <th>Nama Barang</th>
@@ -46,30 +46,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <tr>
-                                <td>1. </td>
-                                <td>Acer</td>
-                                <td>Laptop</td>
-                                <td>Acer Predator 3000</td>
-                                <td>18 November 2019</td>
-                                <td>20</td>
-                                <td>Rp. 200.000.000</td>
-                                <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
-                                <td>
-                                <form action="" method="POST">
-                                    @method("delete")
-                                    @csrf
-                                        <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Hapus</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        
+                        @foreach ($data as $item)
+                        <tr>
+                            <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
+                            <td>{{ $item->databarang->merk }}</td>
+                            <td>{{ $item->namajenis }}</td>
+                            <td>{{ $item->databarang->nama }}</td>                            
+                            <td>{{ $item->tanggal }}</td>                            
+                            <td>{{ $item->stok }}</td>                            
+                            <td>{{ $item->harga }}</td>                            
+                            <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
+                            <td>
+                            <form action="" method="POST">
+                                @method("delete")
+                                @csrf
+                                    <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach                        
                     </tbody>
                 </table>
              </div>
         </div>
-    </section>
-    <section class="content">
     </section>
 </div>    
     

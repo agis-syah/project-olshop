@@ -29,12 +29,12 @@
             </div>
             <div class="card-body">
                 <div class="float-right mb-2">
-                <a href="formdatabarang" class="btn btn-success"><i class="fa fa-plus"></i>Tambah</a>
+                <a href="{{ route("databarang.create") }}" class="btn btn-success"><i class="fa fa-plus"></i>Tambah</a>
                 </div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th>No.</th>
                             <th>Merk</th>
                             <th>Nama Barang</th>
                             <th>Jenis Barang</th>
@@ -42,28 +42,28 @@
                             <th>Harga Jual</th>
                             <th>Total Harga</th>
                             <th colspan="2">Action</th>
-        
                         </tr>
                     </thead>
                     <tbody>
-                            <tr>
-                                <td>1. </td>
-                                <td>Acer</td>
-                                <td>Acer Predator 3000</td>
-                                <td>Laptop</td>
-                                <td>20</td>
-                                <td>Rp. 13.000.000</td>
-                                <td>Rp. 260.000.000</td>
-                                <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
-                                <td>
-                                <form action="" method="POST">
-                                    @method("delete")
-                                    @csrf
-                                        <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Hapus</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        
+                        @foreach ($data as $item)
+                        <tr>
+                            <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }} </td>
+                            <td>{{ $item->merk }}</td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->namajenis }}</td>
+                            <td>{{ $item->stok }} Pcs</td>
+                            <td>Rp. {{ $item->harga }}</td>
+                            <td>Rp. {{ $item->stok * $item->harga }}</td>
+                            <td><a href="{{ route("databarang.show",[$item->id]) }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
+                            <td>
+                            <form action="{{ route("databarang.destroy",[$item->id]) }}" method="POST">
+                                @method("delete")
+                                @csrf
+                                    <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
              </div>

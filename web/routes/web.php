@@ -21,35 +21,20 @@ Route::middleware("auth")->group(function () {
     Route::get('/kalender', function () {
         return view('pages.kalender');
     });
-    Route::get('/barang', function () {
-        return view('pages.barangmasuk.list');
-    });
-    Route::get('/data', function () {
-        return view('pages.databarang.list');
-    });
+
+    Route::resource('/barangmasuk', 'BarangMasukController');
+
+    Route::resource('/databarang', 'DataBarangController');
+
     Route::get('/customer', function () {
         return view('pages.datacustomer.list');
     });
-    Route::get('/ongkir', function () {
-        return view('pages.ongkir.list');
-    });
-    Route::get('/supplier', function () {
-        return view('pages.datasupplier.list');
-    });
+    Route::resource('ongkir',"OngkirController");
+
+    Route::resource('supplier',"SupplierController");
+
     Route::get('/return', function () {
     return view('pages.returnbarang.list');
-    });
-    Route::get('/formbarangmasuk', function () {
-    return view('pages.barangmasuk.form');
-    });
-    Route::get('/formdatabarang', function () {
-    return view('pages.databarang.form');
-    });
-    Route::get('/formdatasupplier', function () {
-    return view('pages.datasupplier.form');
-    });
-    Route::get('/formbarangmasuk', function () {
-    return view('pages.barangmasuk.form');
     });
     Route::get('/laporanreturn', function () {
     return view('pages.laporan.return');
@@ -60,9 +45,6 @@ Route::middleware("auth")->group(function () {
     Route::get('/laporanstok', function () {
     return view('pages.laporan.stok');
     });    
-    Route::get('/formongkir', function () {
-        return view('pages.ongkir.form');
-        });
     Route::get('/profil', function () {
         return view('pages.profile.profil');
         });

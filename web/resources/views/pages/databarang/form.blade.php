@@ -24,11 +24,16 @@
                 <h3 class="card-title">Form Data Barang</h3>
             </div>
             <div class="card-body">
-            <form action="" method="POST" autocomplete="off">
+            <form action={{isset($data)
+                    ?route("databarang.update",[$data->id])
+                    :route("databarang.store")}} 
+                method="POST" autocomplete="off">
                 @csrf
                 <div class="form-group">
                         <label for="kode">Kode Barang</label>
-                        <input type="text" class="form-control @error("kode") is-invalid @enderror" name="kode" value="">
+                        <input type="text" class="form-control @error("kode") is-invalid @enderror" name="kode" 
+                                value='{{ isset($data)?$data->kode:old("kode") }}' 
+                                style="{{ isset($data)?"pointer-events:none;":old("kode") }}">
                         @error("kode")
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -37,7 +42,7 @@
                     </div>
                 <div class="form-group">
                     <label for="merk">Merk</label>
-                    <input type="text" class="form-control @error("merk") is-invalid @enderror" name="merk" value="">
+                    <input type="text" class="form-control @error("merk") is-invalid @enderror" name="merk" value='{{ isset($data)?$data->merk:old("merk") }}'>
                     @error("merk")
                         <div class="invalid-feedback">
                             {{$message}}
@@ -46,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     <label for="nama">Nama Barang</label>
-                    <input type="text" class="form-control @error("nama") is-invalid @enderror" name="nama" value="">
+                    <input type="text" class="form-control @error("nama") is-invalid @enderror" name="nama" value='{{ isset($data)?$data->nama:old("nama") }}'>
                     @error("nama")
                         <div class="invalid-feedback">
                         {{$message}}
@@ -56,17 +61,17 @@
                 <div class="form-group">
                     <label for="jenis">Jenis Barang</label>
                         <select name="jenis" class="form-control">
-                            <option value="Komputer">
+                            <option value="k">
                                 Komputer</option>
-                            <option value="Laptop">
+                            <option value="l">
                                 Laptop</option>
-                            <option value="Gadget">
+                            <option value="g">
                                 Gadget</option>
                         </select>
                 </div>
                 <div class="form-group">
                     <label for="stok">Stok Barang</label>
-                    <input type="text" class="form-control @error("stok") is-invalid @enderror" name="stok" value="">
+                    <input type="text" class="form-control @error("stok") is-invalid @enderror" name="stok" value='{{ isset($data)?$data->stok:old("stok") }}'>
                      @error("stok")
                         <div class="invalid-feedback">
                             {{$message}}
@@ -75,7 +80,7 @@
                 </div>
                 <div class="form-group">
                     <label for="harga">Harga</label>
-                    <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value="">
+                    <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga" value='{{ isset($data)?$data->harga:old("harga") }}'>
                     @error("harga")
                         <div class="invalid-feedback">
                             {{$message}}
@@ -84,7 +89,7 @@
                 </div>
                 <div class="form-group">
                     <label for="detail">Detail Produk</label>
-                    <textarea type="text" class="form-control @error("detail") is-invalid @enderror" name="detail" value=""></textarea>
+                    <textarea type="text" class="form-control @error("detail") is-invalid @enderror" name="detail" value='{{ isset($data)?$data->detail:old("detail") }}'></textarea>
                     @error("detail")
                         <div class="invalid-feedback">
                             {{$message}}
@@ -93,7 +98,7 @@
                 </div>
                 <div class="form-group float-right">
                     <button type="submit" class="btn btn-success"><i class="fa fa-save"> Simpan</i></button>
-                    <a href="data" class="btn btn-danger"><i class="fa fa-arrow-left"> Batal</i></a>
+                    <a href="{{ route("databarang.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"> Batal</i></a>
                 </div>
             </form>
             </div>
