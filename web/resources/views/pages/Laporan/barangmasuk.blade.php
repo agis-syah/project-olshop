@@ -1,17 +1,17 @@
 @extends('main')
 
-@section('title','Laporan Penjualan')
+@section('title','Laporan Barang Masuk')
 
 @section('content')
 <div class="content-wrapper">
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-6"><h1>Penjualan</h1></div>
+                <div class="col-6"><h1>Barang Masuk</h1></div>
                 <div class="col-6">
                 <ul class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="">Home</a></li>
-                    <li class="breadcrumb-item active">Laporan Penjualan</li>    
+                    <li class="breadcrumb-item active">Laporan Barang Masuk</li>    
                 </ul>    
                 </div>    
             </div>    
@@ -20,10 +20,10 @@
     <section class="content">
             <div class="card">
                     <div class="card-header bg-info">
-                        <h3 class="card-title">Laporan Penjualan</h3>
+                        <h3 class="card-title">Laporan Barang Masuk</h3>
                     </div>
                     <div class="card-body">
-                            {{-- {{ route("report.penjualan") }}  untuk memanggil report penjualan--}}
+                            {{-- {{ route("report.brgmasuk") }}  untuk memanggil report penjualan--}}
                         <form action="" method="GET" class="row"> 
                             <div class="form-group col-md-6">
                                 <label for="daritanggal">Dari Tanggal</label>
@@ -37,6 +37,17 @@
                                     name="sampaitanggal"
                                     value="{{ isset($_GET["sampaitanggal"])?$_GET["sampaitanggal"]:"" }}">
                             </div>
+                            <div class="form-group col-md-6">
+                                    <label for="supplier">Supplier</label>
+                                    <select name="supplier" id="supplier" class="form-control">
+                                    @foreach ($supplier as $item)
+                                        <option value="{{ $item->id }}"
+                                            {{ isset($_GET["supplier"]) && $_GET["supplier"]==$item->id
+                                                ?"selected":"" }}>
+                                            {{ $item->nama }}</option>
+                                    @endforeach
+                                    </select>
+                                </div>
                             <div class="form-group col-md-6 offset-md-6">
                                 <button class="btn btn-success btn-block mt-auto">
                                     Generate</button>

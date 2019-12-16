@@ -18,11 +18,32 @@
         </div>    
     </section>
     <section class="content">
-        @if ($message = session("info"))
-            <div class="alert alert-success">
-                <i class="fa fa-info-circle"></i>{{$message}}
-            </div>
-        @endif
+            <div class="card">
+                    <div class="card-header bg-info">
+                        <h3 class="card-title">Laporan Return Barang</h3>
+                    </div>
+                    <div class="card-body">
+                            {{-- {{ route("report.return") }}  untuk memanggil report return--}}
+                        <form action="" method="GET" class="row"> 
+                            <div class="form-group col-md-6">
+                                <label for="daritanggal">Dari Tanggal</label>
+                                <input type="date" class="form-control"
+                                    name="daritanggal"
+                                    value="{{ isset($_GET["daritanggal"])?$_GET["daritanggal"]:"" }}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="sampaitanggal">Sampai Tanggal</label>
+                                <input type="date" class="form-control"
+                                    name="sampaitanggal"
+                                    value="{{ isset($_GET["sampaitanggal"])?$_GET["sampaitanggal"]:"" }}">
+                            </div>
+                            <div class="form-group col-md-6 offset-md-6">
+                                <button class="btn btn-success btn-block mt-auto">
+                                    Generate</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
         <div class="card">
             <div class="card-header bg-warning text-white">
                 <h3 class="card-title">Laporan Return Barang</h3>

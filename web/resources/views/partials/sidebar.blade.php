@@ -105,6 +105,12 @@
                                 <p>Return Barang</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="laporanbrgmasuk" class="nav-link">
+                                <i class="fas fa-check-circle nav-icon"></i>
+                                <p>Barang Masuk</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

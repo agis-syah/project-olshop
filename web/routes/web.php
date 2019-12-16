@@ -39,6 +39,9 @@ Route::middleware("auth")->group(function () {
     Route::get('/laporanreturn', function () {
     return view('pages.laporan.return');
     });
+    Route::get('/laporanbrgmasuk', function () {
+    return view('pages.laporan.barangmasuk');
+    });
     Route::get('/laporanpenjualan', function () {
     return view('pages.laporan.penjualan');
     });
