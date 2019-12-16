@@ -29,6 +29,9 @@
                     :route("databarang.store")}} 
                 method="POST" autocomplete="off">
                 @csrf
+                @if (isset($data))
+                        @method("PUT")
+                @endif
                 <div class="form-group">
                         <label for="kode">Kode Barang</label>
                         <input type="text" class="form-control @error("kode") is-invalid @enderror" name="kode" 

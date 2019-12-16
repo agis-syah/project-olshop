@@ -42,17 +42,26 @@ class BarangMasukController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode' => 'required|max:20',
-            'id_barang' => 'required',
+            'kode' => 'required',
             'merk' => 'required',
-            'jenis' => 'required',
             'tgl' => 'required',
             'stok' => 'required',
-            'harga' => 'required',
-            'id_supplier' => 'required'
+            'harga' => 'required'
         ]);
 
         BarangMasuk::create($request->except("_token"));
+        // $barangmasuk = new BarangMasuk;
+        // $databarang = new DataBarang;
+        // $barangmasuk->kode = $request->kode;
+        // $barangmasuk->id_barang = $request->id_barang;
+        // $barangmasuk->merk = $request->merk;
+        // $barangmasuk->jenis = $request->jenis;
+        // $barangmasuk->tgl = $request->tgl;
+        // $barangmasuk->stok = $request->stok;
+        // $barangmasuk->harga = $request->harga;
+        // $barangmasuk->id_supplier = $request->id_supplier;
+        // $barangmasuk->save();
+
 
         $request->session()->flash("info","Berhasil Tambah Data Barang Masuk");
         return redirect()->route("barangmasuk.index");
@@ -64,12 +73,12 @@ class BarangMasukController extends Controller
      * @param  \App\BarangMasuk  $barangMasuk
      * @return \Illuminate\Http\Response
      */
-    public function show($id, $barang, $supplier)
+    public function show($id)
     {
         $data = BarangMasuk::find($id);
         $barang = DataBarang::all();
         $supplier = Supplier::all();
-        return view("pages.barangmasuk.form", compact("data","barang", "supplier"));
+        return view("pages.barangmasuk.form", compact("data","barang","supplier"));
     }
 
     /**
@@ -93,18 +102,17 @@ class BarangMasukController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'kode' => 'required|max:20',
-            'id_barang' => 'required',
+            'kode' => 'required',
             'merk' => 'required',
-            'jenis' => 'required',
             'tgl' => 'required',
             'stok' => 'required',
-            'harga' => 'required',
-            'id_supplier' => 'required'
+            'harga' => 'required'
         ]);
         
         BarangMasuk::where("id",$id)
                 ->update($request->except(["_token","_method"]));
+        DataBarang::where("id",$id)
+                ->update($request->except(["_token","_method","id_barang","kode","merk","tgl","harga","id_supplier"]));
         
         $request->session()->flash("info","Berhasil Ubah Data Barang Masuk");
 

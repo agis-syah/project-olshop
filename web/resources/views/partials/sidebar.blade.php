@@ -42,7 +42,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                        <a href="barang" class="nav-link">
+                        <a href="{{ route("barangmasuk.index") }}" class="nav-link">
                                     <i class="fas fa-check-circle nav-icon"></i>
                                     <p>Barang Masuk</p>
                                 </a>
@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="customer" class="nav-link">
+                            <a href="{{ route("customer.index") }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Customer</p>
                             </a>

@@ -22,19 +22,15 @@ Route::middleware("auth")->group(function () {
         return view('pages.kalender');
     });
 
-    Route::resource('/barangmasuk', 'BarangMasukController');
+    Route::resource('/barangmasuk', "BarangMasukController");
 
-    Route::resource('/databarang', 'DataBarangController');
+    Route::resource('/databarang', "DataBarangController");
 
-    Route::get('/customer', function () {
-        return view('pages.datacustomer.list');
-    });
-<<<<<<< HEAD
-=======
+    Route::resource('/customer', "CustomerController");
+    
 
->>>>>>> f5245e1ca0b0b43f88ab3fe4bb8c1e4ab1e0d9df
     Route::resource('ongkir',"OngkirController");
-
+    Route::get('databarang/kode/{id}','DataBarangController@getbarang');
     Route::resource('supplier',"SupplierController");
 
     Route::get('/return', function () {
@@ -58,6 +54,8 @@ Route::middleware("auth")->group(function () {
     Route::get('/detail', function () {
         return view('pages.laporan.detail');
         });
+    Route::get('customer/reset/{id}','CustomerController@resetPassword')
+        ->name('customer.reset');
 });
 Route::get("/register",function(){
     return view('pages.register');

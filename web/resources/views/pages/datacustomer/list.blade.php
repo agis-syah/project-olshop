@@ -35,19 +35,18 @@
                             <th>Nama Customer</th>
                             <th>Alamat</th>
                             <th>Telepon</th>
-                            <th>Jenis Kelamin</th>
                             <th colspan="2">Action</th>
         
                         </tr>
                     </thead>
                     <tbody>
+                            @foreach ($data as $item)
                             <tr>
-                                <td>1. </td>
-                                <td>Adit</td>
-                                <td>Jl. Sei Deli, Medan Denai</td>
-                                <td>081922002200</td>
-                                <td>Laki-Laki</td>
-                                <td> <button class="btn btn-primary btn-block"><i class="fa fa-undo"> Reset Password</i></button></td>
+                                <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
+                                <td>{{ $item->nama }}</td>
+                                <td>{{ $item->alamat }}</td>
+                                <td>{{ $item->telepon }}</td>
+                                <td><a href="{{ route("customer.reset",[$item->id]) }}" class="btn btn-info btn-block"><i class="fa fa-redo"></i> Reset</a></td>
                                 <td>
                                 <form action="" method="POST">
                                     @method("delete")
@@ -56,7 +55,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        
+                            @endforeach                        
                     </tbody>
                 </table>
              </div>

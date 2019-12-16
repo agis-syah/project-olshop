@@ -49,15 +49,15 @@
                         @foreach ($data as $item)
                         <tr>
                             <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
-                            <td>{{ $item->databarang->merk }}</td>
+                            <td>{{ $item->merk }}</td>
                             <td>{{ $item->namajenis }}</td>
-                            <td>{{ $item->databarang->nama }}</td>                            
-                            <td>{{ $item->tanggal }}</td>                            
+                            <td>{{ $item->barang->nama}}</td>                            
+                            <td>{{ $item->tgl }}</td>                            
                             <td>{{ $item->stok }}</td>                            
                             <td>{{ $item->harga }}</td>                            
-                            <td><a href="" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>
+                            <td><a href="{{ route("barangmasuk.show",[$item->id])}}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> Ubah</a></td>
                             <td>
-                            <form action="" method="POST">
+                            <form action="{{ route("barangmasuk.destroy",[$item->id]) }}" method="POST">
                                 @method("delete")
                                 @csrf
                                     <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Hapus</button>

@@ -115,4 +115,8 @@ class DataBarangController extends Controller
         return redirect()->route("databarang.index")
             ->with("info","Berhasil Hapus Data Staff");
     }
+    
+    public function getbarang($id){
+        return response()->json(DataBarang::selectRaw("kode,merk")->find($id));
+    }
 }

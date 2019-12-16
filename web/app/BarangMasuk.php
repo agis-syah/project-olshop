@@ -24,7 +24,7 @@ class BarangMasuk extends Model
 
     public function barang()
     {
-        return $this->hasMany('App\DataBarang');
+        return $this->belongsTo('App\DataBarang',"id_barang","id");
     }
 
     public function supplier()
