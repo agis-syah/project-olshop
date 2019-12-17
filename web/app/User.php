@@ -16,8 +16,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'tanggal', 'email', 'alamat', 'telepon', 'kelamin', 'password'
     ];
+
+    public function getNamaKelaminAttribute(){
+        $namakelamin = "";
+        if($this->kelamin=="Pria"){
+            $namakelamin = "Pria";
+        }elseif($this->jenis=="Wanita"){
+            $namakelamin = "Wanita";
+        }
+        return $namakelamin;
+    }
 
     /**
      * The attributes that should be hidden for arrays.

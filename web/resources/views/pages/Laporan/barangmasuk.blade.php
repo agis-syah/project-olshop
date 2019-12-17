@@ -10,7 +10,7 @@
                 <div class="col-6"><h1>Barang Masuk</h1></div>
                 <div class="col-6">
                 <ul class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                     <li class="breadcrumb-item active">Laporan Barang Masuk</li>    
                 </ul>    
                 </div>    
@@ -24,7 +24,7 @@
                     </div>
                     <div class="card-body">
                             {{-- {{ route("report.brgmasuk") }}  untuk memanggil report penjualan--}}
-                        <form action="" method="GET" class="row"> 
+                        <form action="{{ route('pages.laporan.barangmasuk') }}" method="GET" class="row"> 
                             <div class="form-group col-md-6">
                                 <label for="daritanggal">Dari Tanggal</label>
                                 <input type="date" class="form-control"
@@ -39,17 +39,18 @@
                             </div>
                             <div class="form-group col-md-6">
                                     <label for="supplier">Supplier</label>
-                                    <select name="supplier" id="supplier" class="form-control">
+                                    <select name="id_supplier" id="id_supplier" class="form-control">
                                     @foreach ($supplier as $item)
                                         <option value="{{ $item->id }}"
-                                            {{ isset($_GET["supplier"]) && $_GET["supplier"]==$item->id
+                                            {{ isset($_GET["id_supplier"]) && $_GET["id_supplier"]==$item->id
                                                 ?"selected":"" }}>
-                                            {{ $item->nama }}</option>
+                                            {{ $item->id_supplier }}</option>
                                     @endforeach
                                     </select>
                                 </div>
                             <div class="form-group col-md-6 offset-md-6">
-                                <button class="btn btn-success btn-block mt-auto">
+                                <button class="btn btn-success btn-block mt-auto"
+                                style="position:absolute;bottom:16px">
                                     Generate</button>
                             </div>
                         </form>
@@ -65,34 +66,34 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Customer</th>
+                            <th>Merk</th>
+                            <th>Jenis Barang</th>
                             <th>Nama Barang</th>
-                            <th>Tgl Beli</th>
-                            <th>Jumlah Barang</th>
-                            <th>Harga</th>
-                            <th>Status</th>
-                            <th>Detail</th>
+                            <th>Tanggal Masuk</th>
+                            <th>Qty</th>
+                            <th>Harga Total</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Adit</td>
-                                <td>Acer Predator 3000</td>
-                                <td>18 November 2019</td>
-                                <td>1</td>
-                                <td>Rp.13.000.000</td>
-                                <td>Proses</td>
-                                <td><a href="detail" class="btn btn-primary btn-block"><i class="fa fa-eye"> Lihat</i></a></td>
-                                <td>
-                                <form action="" method="POST">
-                                    @method("delete")
-                                    @csrf
-                                        <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Hapus</button>
-                                    </form>
-                                </td>
-                            </tr>
+                        @foreach ($data as $item)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $item->merk }}</td>
+                            <td>{{ $item->jenis }}</td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->tgl }}</td>
+                            <td>{{ $item->qty }}</td>
+                            <td>{{ $item->harga }}</td>
+                            <td>
+                            <form action="" method="POST">
+                                @method("delete")
+                                @csrf
+                                    <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
                         
                     </tbody>
                 </table>

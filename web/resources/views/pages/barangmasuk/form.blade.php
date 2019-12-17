@@ -98,7 +98,7 @@
 
                     <div class="form-group col-md-12">
                         <label for="stok">Stok Barang</label>
-                        <input type="text" class="form-control @error("stok") is-invalid @enderror" name="stok"
+                        <input type="text" class="form-control @error("stok") is-invalid @enderror" name="stok"  value='{{ isset($data)?$data->stok:old("stok") }}'
                             value="">
                         @error("stok")
                         <div class="invalid-feedback">
@@ -109,7 +109,7 @@
 
                     <div class="form-group col-md-12">
                         <label for="harga">Harga</label>
-                        <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga"
+                        <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga"  value='{{ isset($data)?$data->harga:old("harga") }}'
                             value="">
                         @error("harga")
                         <div class="invalid-feedback">
@@ -119,7 +119,7 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                        <label for="jenis">Supplier</label>
+                        <label for="supplier">Supplier</label>
                         <select name="id_supplier" id="id_supplier" class="form-control">
                             @foreach ($supplier as $item)
                             <option value="{{ $item->id }}"

@@ -24,7 +24,7 @@
                     </div>
                     <div class="card-body">
                             {{-- {{ route("report.penjualan") }}  untuk memanggil report penjualan--}}
-                        <form action="" method="GET" class="row"> 
+                        <form action="{{ route('pages.laporan.penjualan') }}" method="GET" class="row"> 
                             <div class="form-group col-md-6">
                                 <label for="daritanggal">Dari Tanggal</label>
                                 <input type="date" class="form-control"

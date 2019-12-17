@@ -18,33 +18,35 @@ Route::middleware("auth")->group(function () {
     Route::get('/home', function(){
         return view('pages.dashboard');
     })->name("home");
-    Route::get('/kalender', function () {
-        return view('pages.kalender');
-    });
+    
+    Route::get('/user','UserController@index')
+    ->name("user");
+    Route::post("/user/simpan",'UserController@simpan')
+    ->name("user.update");
 
     Route::resource('/barangmasuk', "BarangMasukController");
 
     Route::resource('/databarang', "DataBarangController");
 
     Route::resource('/customer', "CustomerController");
-    
+
+    Route::get('laporan/stok',"ReportController@laporanstok")
+    ->name('pages.laporan.stok');
+
+    Route::get('laporan/barangmasuk',"ReportController@laporanbarangmasuk")
+    ->name('pages.laporan.barangmasuk');
+
+    Route::get('laporan/penjualan',"ReportController@laporanpenjualan")
+    ->name('pages.laporan.penjualan');
+
+    Route::get('laporan/return',"ReportController@laporanreturn")
+    ->name('pages.laporan.return.list');
 
     Route::resource('ongkir',"OngkirController");
     Route::get('databarang/kode/{id}','DataBarangController@getbarang');
     Route::resource('supplier',"SupplierController");
-
-    Route::get('/return', function () {
-    return view('pages.returnbarang.list');
-    });
-    Route::get('/laporanreturn', function () {
-    return view('pages.laporan.return');
-    });
-    Route::get('/laporanbrgmasuk', function () {
-    return view('pages.laporan.barangmasuk');
-    });
-    Route::get('/laporanpenjualan', function () {
-    return view('pages.laporan.penjualan');
-    });
+   
+   
     Route::get('/laporanstok', function () {
     return view('pages.laporan.stok');
     });    

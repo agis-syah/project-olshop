@@ -23,16 +23,16 @@
                 <h3 class="card-title">Form Profile</h3>
             </div>
             <div class="card-body">
-            <form action="" method="POST" autocomplete="off" class="row">
+            <form action="{{ route('user.update') }}" method="POST" autocomplete="off" class="row">
                 @csrf
                 <div class="col-md-3">
 
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control @error("nama") is-invalid @enderror" name="nama" value="">
-                        @error("nama")
+                        <label for="name">Nama</label>
+                        <input type="text" class="form-control @error("name") is-invalid @enderror" name="name" value="{{ isset($data)?$data->name:old("name") }}">
+                        @error("name")
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>
@@ -41,7 +41,7 @@
     
                     <div class="form-group">
                         <label for="tanggal">Tanggal Lahir</label>
-                        <input type="date" class="form-control @error("tanggal") is-invalid @enderror" name="tanggal" value="">
+                        <input type="date" class="form-control @error("tanggal") is-invalid @enderror" name="tanggal" value="{{ isset($data)?$data->tanggal:old("tanggal") }}">
                         @error("tanggal")
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -51,7 +51,7 @@
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control @error("email") is-invalid @enderror" name="email" value="">
+                        <input type="text" class="form-control @error("email") is-invalid @enderror" name="email" value="{{ isset($data)?$data->email:old("email") }}">
                         @error("email")
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -75,7 +75,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="telepon">Telepon</label>
-                        <input type="text" class="form-control @error("telepon") is-invalid @enderror" name="telepon" value="">
+                        <input type="text" class="form-control @error("telepon") is-invalid @enderror" name="telepon" value="{{ isset($data)?$data->telepon:old("telepon") }}">
                         @error("telepon")
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -85,12 +85,13 @@
 
                     <div class="form-group">
                         <label for="kelamin">Jenis Kelamin</label>
-                            <select name="kelamin" class="form-control">
-                                <option value="Pria">
-                                    Pria</option>
-                                <option value="Wanita">
-                                    Wanita</option>
-                            </select>
+                        <select name="kelamin" id="kelamin" class="form-control">
+                            {{-- @foreach ($user as $item)
+                                <option value="{{ $item->id }}"
+                                    {{ isset($user) && $user->kelamin==$item->id?"selected":"" }}
+                                    >{{ $item->kelamin }}</option>
+                            @endforeach --}}
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -100,7 +101,7 @@
 
                     <div class="form-group float-right">
                         <button type="submit" class="btn btn-success" style="margin-top:30px"><i class="fa fa-save"> Simpan</i></button>
-                        <a href="ongkir" class="btn btn-danger" style="margin-top:30px"><i class="fa fa-arrow-left"> Batal</i></a>
+                        <a href="{{ route('home') }}" class="btn btn-danger" style="margin-top:30px"><i class="fa fa-arrow-left"> Batal</i></a>
                     </div>
                 </div>
             </form>

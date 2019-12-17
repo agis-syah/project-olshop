@@ -15,7 +15,7 @@
             <img src="{{asset("dist/img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="profil" class="d-block">
+                <a href="{{ route('user') }}" class="d-block">
                     {{ ucfirst(auth::user()->name)}}
                 </a>
             </div>
@@ -88,39 +88,31 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="laporanstok" class="nav-link">
+                        <a href="{{ route('pages.laporan.stok') }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Stok Barang</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="laporanpenjualan" class="nav-link">
+                            <a href="{{ route('pages.laporan.penjualan') }}" class="nav-link">
                                     <i class="fas fa-check-circle nav-icon"></i>
                                     <p>Penjualan</p>
                                 </a>
                             </li>
                         <li class="nav-item">
-                            <a href="laporanreturn" class="nav-link">
+                            <a href="{{ route('pages.laporan.return.list') }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Return Barang</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="laporanbrgmasuk" class="nav-link">
+                            <a href="{{ route('pages.laporan.barangmasuk') }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Barang Masuk</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-            </ul>
-            <ul class="nav nav-pills nav-sidebar flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="kalender">
-                        <i class="fas fa-calendar-alt nav-icon"></i>
-                        <p>Kalender</p>
-                    </a>
-               </li>
             </ul>
 
             <ul class="nav nav-pills nav-sidebar flex-column">

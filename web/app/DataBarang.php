@@ -12,11 +12,11 @@ class DataBarang extends Model
 
     public function getNamaJenisAttribute(){
         $namajenis = "";
-        if($this->jenis=="k"){
+        if($this->jenis=="Komputer"){
             $namajenis = "Komputer";
-        }elseif($this->jenis=="l"){
+        }elseif($this->jenis=="Laptop"){
             $namajenis = "Laptop";
-        }elseif($this->jenis=="g"){
+        }elseif($this->jenis=="Gadget"){
             $namajenis = "Gadget";
         }
         return $namajenis;

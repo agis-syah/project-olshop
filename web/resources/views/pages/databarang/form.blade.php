@@ -64,11 +64,11 @@
                 <div class="form-group">
                     <label for="jenis">Jenis Barang</label>
                         <select name="jenis" class="form-control">
-                            <option value="k">
+                            <option value="Komputer">
                                 Komputer</option>
-                            <option value="l">
+                            <option value="Laptop">
                                 Laptop</option>
-                            <option value="g">
+                            <option value="gadget">
                                 Gadget</option>
                         </select>
                 </div>
