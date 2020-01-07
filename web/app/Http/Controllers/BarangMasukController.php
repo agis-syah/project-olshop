@@ -6,6 +6,7 @@ use App\BarangMasuk;
 use App\DataBarang;
 use App\Supplier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BarangMasukController extends Controller
 {
@@ -50,17 +51,18 @@ class BarangMasukController extends Controller
         ]);
 
         BarangMasuk::create($request->except("_token"));
-        // $barangmasuk = new BarangMasuk;
-        // $databarang = new DataBarang;
-        // $barangmasuk->kode = $request->kode;
-        // $barangmasuk->id_barang = $request->id_barang;
-        // $barangmasuk->merk = $request->merk;
-        // $barangmasuk->jenis = $request->jenis;
-        // $barangmasuk->tgl = $request->tgl;
-        // $barangmasuk->stok = $request->stok;
-        // $barangmasuk->harga = $request->harga;
-        // $barangmasuk->id_supplier = $request->id_supplier;
-        // $barangmasuk->save();
+        // // DataBarang::where("id",$request->id_barang)
+        // //         ->update($request->except(["nama","jenis","merk","tgl","stok","harga","kode","id_barang","_token","_method"]));
+        // DataBarang::where("id",$request->id_barang)
+        //         ->update($request->qty);
+
+        $request = DB::table('tbldatabarang')
+            ->where('id',$request->id_barang)
+            ->update(['stok'] -> $request->qty);
+
+        // $databrg = new DataBarang;
+        // $databrg->stok = $request->qty;
+        // $databrg->update();
 
 
         $request->session()->flash("info","Berhasil Tambah Data Barang Masuk");
@@ -111,8 +113,6 @@ class BarangMasukController extends Controller
         
         BarangMasuk::where("id",$id)
                 ->update($request->except(["_token","_method"]));
-        DataBarang::where("id",$id)
-                ->update($request->except(["_token","_method","id_barang","kode","merk","tgl","harga","id_supplier"]));
         
         $request->session()->flash("info","Berhasil Ubah Data Barang Masuk");
 

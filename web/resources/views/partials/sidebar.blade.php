@@ -100,7 +100,7 @@
                                 </a>
                             </li>
                         <li class="nav-item">
-                            <a href="{{ route('pages.laporan.return.list') }}" class="nav-link">
+                            <a href="{{ route('pages.laporan.return') }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Return Barang</p>
                             </a>

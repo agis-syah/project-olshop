@@ -18,7 +18,7 @@ class CreateDataBarangsTable extends Migration
             $table->string('kode');
             $table->string('merk');
             $table->string('nama');
-            $table->enum('jenis',['Laptop','Komputer','Gadget']);
+            $table->enum('jenis',['l','k','g']);
             $table->string('stok');
             $table->string('harga');
             $table->string('detail');

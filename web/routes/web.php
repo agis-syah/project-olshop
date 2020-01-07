@@ -40,12 +40,11 @@ Route::middleware("auth")->group(function () {
     ->name('pages.laporan.penjualan');
 
     Route::get('laporan/return',"ReportController@laporanreturn")
-    ->name('pages.laporan.return.list');
+    ->name('pages.laporan.return');
 
     Route::resource('ongkir',"OngkirController");
     Route::get('databarang/kode/{id}','DataBarangController@getbarang');
     Route::resource('supplier',"SupplierController");
-   
    
     Route::get('/laporanstok', function () {
     return view('pages.laporan.stok');
@@ -58,6 +57,9 @@ Route::middleware("auth")->group(function () {
         });
     Route::get('/detail', function () {
         return view('pages.laporan.detail');
+        });
+    Route::get('/return', function () {
+        return view('pages.returnbarang.list');
         });
     Route::get('customer/reset/{id}','CustomerController@resetPassword')
         ->name('customer.reset');

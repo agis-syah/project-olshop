@@ -117,6 +117,6 @@ class DataBarangController extends Controller
     }
     
     public function getbarang($id){
-        return response()->json(DataBarang::selectRaw("kode,merk")->find($id));
+        return response()->json(DataBarang::selectRaw("kode,merk,stok")->find($id));
     }
 }

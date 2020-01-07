@@ -76,14 +76,14 @@
 
                     <div class="form-group col-md-12">
                         <label for="jenis">Jenis Barang</label>
-                        <select name="jenis" class="form-control">
-                            <option value="k">
-                                Komputer</option>
-                            <option value="l">
-                                Laptop</option>
-                            <option value="g">
-                                Gadget</option>
-                        </select>
+                            <select name="jenis" class="form-control">
+                                <option value="k" {{ isset($data) && $data->jenis=="k"?"selected":'' }}>
+                                    Komputer</option>
+                                <option value="l" {{ isset($data) && $data->jenis=="l"?"selected":'' }}>
+                                    Laptop</option>
+                                <option value="g" {{ isset($data) && $data->jenis=="g"?"selected":'' }}>
+                                    Gadget</option>
+                            </select>
                     </div>
 
                     <div class="form-group col-md-12">
@@ -97,9 +97,18 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                        <label for="stok">Stok Barang</label>
-                        <input type="text" class="form-control @error("stok") is-invalid @enderror" name="stok"  value='{{ isset($data)?$data->stok:old("stok") }}'
-                            value="">
+                        <label for="qty">Stok Barang</label>
+                        <input type="number" class="form-control @error("qty") is-invalid @enderror" name="qty" id="qty" value='{{ isset($data)?$data->qty:old("qty") }}' readonly>
+                        @error("qty")
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="stok">Qty</label>
+                        <input type="number" class="form-control @error("stok") is-invalid @enderror" name="stok" id="stok" value='{{ isset($data)?$data->stok:old("stok") }}' onkeyup="jlh()">
                         @error("stok")
                         <div class="invalid-feedback">
                             {{$message}}
@@ -109,8 +118,7 @@
 
                     <div class="form-group col-md-12">
                         <label for="harga">Harga</label>
-                        <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga"  value='{{ isset($data)?$data->harga:old("harga") }}'
-                            value="">
+                        <input type="text" class="form-control @error("harga") is-invalid @enderror" name="harga"  value='{{ isset($data)?$data->harga:old("harga")  }}' >
                         @error("harga")
                         <div class="invalid-feedback">
                             {{$message}}
@@ -153,8 +161,13 @@
                 $.get("/databarang/kode/"+id,function(data){
                     $("input[name='kode']").val(data.kode);
                     $("input[name='merk']").val(data.merk);
+                    $("input[name='qty']").val(data.stok);
                 },"json");
             });
         });
+
+        function jlh(){
+            document.getElementById("qty").value=Number(document.getElementById("stok").value)+Number(document.getElementById("qty").value);
+        }
     </script>
 @endpush

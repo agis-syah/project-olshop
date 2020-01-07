@@ -64,11 +64,11 @@
                 <div class="form-group">
                     <label for="jenis">Jenis Barang</label>
                         <select name="jenis" class="form-control">
-                            <option value="Komputer">
+                            <option value="k" {{ isset($data) && $data->jenis=="k"?"selected":'' }}>
                                 Komputer</option>
-                            <option value="Laptop">
+                            <option value="l" {{ isset($data) && $data->jenis=="l"?"selected":'' }}>
                                 Laptop</option>
-                            <option value="gadget">
+                            <option value="g" {{ isset($data) && $data->jenis=="g"?"selected":'' }}>
                                 Gadget</option>
                         </select>
                 </div>

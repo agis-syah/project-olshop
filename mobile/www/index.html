@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <!-- <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"> -->
+        <link rel="stylesheet" href="css/simonika.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+        <title>Olshop Mobile</title>
+    </head>
+    <body>
+        <div data-role="page" id="login">
+            <div data-role="header"><h1>Form Login</h1></div>
+            <div role="main" class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="email">Username / Email</label>
+                    <input type="email" name="email"
+                        placeholder="Username / Email">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="password">Password</label>
+                    <input type="password" name="password"
+                        placeholder="Password">
+                </div>
+                <a href="#daftar" class="ui-btn">Daftar Akun</a>
+                <a href="#home" class="ui-btn">Login</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="home">
+            <div data-role="panel" id="menupanel"
+                data-position="left" data-display="overlay">
+                <ul data-role="listview">
+                    <li><h1>Menu</h1></li>
+                    <li><a href="#home" class="ui-icon-home">Home</a></li>
+                    <li><a href="#notifikasi">Notifikasi</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#login">Logout</a></li>
+                </ul>
+            </div>
+            <div data-role="header">
+                <a href="#menupanel" class="ui-btn-left
+                    ui-btn ui-btn-inline 
+                    ui-corner-all ui-icon-bars 
+                    ui-btn-icon-left">Menu</a>
+                    <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+                <h1>Home</h1>
+            </div>
+
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <a href="#gadget" class="ui-btn">Smartphone</a>
+                </div>
+                <div class="ui-field-contain">
+                    <a href="#laptop" class="ui-btn">Laptop</a>
+                </div>
+                <div class="ui-field-contain">
+                    <a href="#komputer" class="ui-btn">Komputer</a>
+                </div>
+            </div>
+          
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+       
+        <div data-role="page" id="notifikasi">
+            <div data-role="panel" id="menupanel"
+                data-position="left" data-display="overlay">
+                <ul data-role="listview">
+                    <li><h1>Menu</h1></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#notifikasi">Notifikasi</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#login">Logout</a></li>
+                </ul>
+            </div>
+            <div data-role="header">
+                <a href="#menupanel" class="ui-btn-left
+                    ui-btn ui-btn-inline 
+                    ui-corner-all ui-icon-bars 
+                    ui-btn-icon-left">Menu</a>
+                <h1>Notifikasi</h1>
+            </div>
+
+            <div class="ui-content">
+                <ul data-role="listview">                    
+                    <li><a href="#notif4">
+                        <h2>Pesanan #8993823</h2>
+                        <p>12/09/2019</p>
+                        <span class="ui-li-count">Belum Dibaca</span>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="ui-content">
+                <ul data-role="listview">                    
+                    <li><a href="#notif3">
+                        <h2>Pesanan #8993023</h2>
+                        <p>12/09/2019</p>
+                        <span class="ui-li-count">Belum Dibaca</span>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="ui-content">
+                <ul data-role="listview">                    
+                    <li><a href="#notif2">
+                        <h2>Pesanan #8993023</h2>
+                        <p>12/09/2019</p>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="ui-content">
+                <ul data-role="listview">                    
+                    <li><a href="#notif1">
+                        <h2>Pesanan #8993023</h2>
+                        <p>12/09/2019</p>
+                    </a></li>
+                </ul>
+            </div>
+          
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="profile">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Profile</h1>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <a href="#return" class="ui-btn">Return Barang</a>
+                </div>
+
+                <div class="ui-field-contain">
+                    <a href="#setelan" class="ui-btn">Pengaturan Akun</a>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="detailkerja">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Detail Kerja</h1>
+                <a href="#listkerja" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all">Selesai</a>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="judul">Judul</label>
+                    <input type="text" name="judul">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="tanggal">Tanggal</label>
+                    <input type="text" name="tanggal">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="deadline">Deadline</label>
+                    <input type="text" name="deadline">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
+                </div>
+
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <label for="komentar">Komentar</label>
+                        <input type="text" name="komentar">
+                        <button class="ui-btn">Kirim</button>
+                    </li>
+                    <li>
+                        <h2>Budi</h2>
+                        <span class="ui-li-count">09/12/2019</span>
+                        <p>Susah bersihkan</p>
+                    </li>
+                    <li>
+                        <h2>Budi</h2>
+                        <span class="ui-li-count">09/12/2019</span>
+                        <p>Susah bersihkan</p>
+                    </li>
+                    <li>
+                        <h2>Budi</h2>
+                        <span class="ui-li-count">09/12/2019</span>
+                        <p>Susah bersihkan</p>
+                    </li>
+                    <li>
+                        <h2>Budi</h2>
+                        <span class="ui-li-count">09/12/2019</span>
+                        <p>Susah bersihkan</p>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="password">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Ganti Password</h1>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="passwordlama">Password Lama</label>
+                    <input type="password" name="passwordlama">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="passwordbaru">Password Baru</label>
+                    <input type="password" name="passwordbaru">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="konfirmpassword">Konfirm Password</label>
+                    <input type="password" name="konfirmpassword" >
+                </div>
+                <a href="#setelan" class="ui-btn">Simpan</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="setelan">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Pengaturan</h1>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="email">Email</label>
+                    <input type="text" name="nama">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" name="nama">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="telepon">No. Telepon</label>
+                    <input type="number" name="nama">
+                </div>
+                <a href="#password" class="ui-btn">Ganti Password</a>
+                <a href="#profile" class="ui-btn">Simpan</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="return">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Return Barang</h1>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="kodepembelian">Kode Pembelian</label>
+                    <input type="text" name="kodepembelian"> 
+                </div>
+                <div class="ui-field-contain">
+                    <label for="kode">Kode Barang</label>
+                    <input type="text" name="kode">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="namaproduk">Nama Produk</label>
+                    <input type="text" name="namaproduk">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="namacustomer">Nama Customer</label>
+                    <input type="text" name="pengiriman">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="tgl">Tanggal Pembelian</label>
+                    <input type="date" name="tgl">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="jumlah">Jumlah Barang</label>
+                    <input type="number" name="jumlah">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="kondisi">Kondisi Barang</label>
+                    <input type="text" name="kondisi">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Masukkan Resi</label>
+                    <input type="text" name="">
+                </div>
+                <a href="#home" class="ui-btn">Konfirmasi Return</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="notif4">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Konfirmasi Pesanan</h1>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="kode">Kode Barang</label>
+                    <input type="text" name="kode" placeholder="#029230090" readonly> 
+                </div>
+                <div class="ui-field-contain">
+                    <label for="namaproduk">Nama Produk</label>
+                    <input type="text" name="namaproduk" placeholder="Asus A407MA" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="jumlah">Jumlah</label>
+                    <input type="number" name="jumlah" placeholder="1" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pengiriman">Pengiriman / Kurir</label>
+                    <input type="text" name="pengiriman" placeholder="Adi - Karyawan" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="tgl">Tanggal Pembelian</label>
+                    <input type="text" name="tgl" placeholder="21-12-2019" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Harga</label>
+                    <input type="text" name="harga" placeholder="Rp 9.000.000" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Metode Pembayaran</label>
+                    <input type="text" name="" placeholder="Transfer" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Masukkan Resi</label>
+                    <input type="text" name="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Masukkan Gambar</label>
+                    <input type="file" name="" id="">
+                </div>
+                <a href="#home" class="ui-btn">Konfirmasi Bayar</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="notif1">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Konfirmasi Pesanan</h1>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="kode">Kode Barang</label>
+                    <input type="text" name="kode" placeholder="#009230090" readonly> 
+                </div>
+                <div class="ui-field-contain">
+                    <label for="namaproduk">Nama Produk</label>
+                    <input type="text" name="namaproduk" placeholder="Acer Swift 5" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="jumlah">Jumlah</label>
+                    <input type="number" name="jumlah" placeholder="1" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pengiriman">Pengiriman / Kurir</label>
+                    <input type="text" name="pengiriman" placeholder="JNE" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="tgl">Tanggal Pembelian</label>
+                    <input type="text" name="tgl" placeholder="21-12-2019" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Harga</label>
+                    <input type="text" name="harga" placeholder="Rp 9.000.000" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Metode Pembayaran</label>
+                    <input type="text" name="" placeholder="Transfer" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Masukkan Resi</label>
+                    <input type="text" name="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="harga">Masukkan Gambar</label>
+                    <input type="file" name="" id="">
+                </div>
+                <a href="#home" class="ui-btn">Konfirmasi Bayar</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="notif2">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Pesanan Dikemas</h1>
+            </div>
+            <p><h3>Pesanan dengan Kode :</h3></p>
+            <p>Sedang Dikemas</p>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="notif3">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Pesanan Dikirim</h1>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="kode">Kode Barang</label>
+                    <input type="text" name="kode" placeholder="#009230090" readonly> 
+                </div>
+                <div class="ui-field-contain">
+                    <label for="namaproduk">Nama Produk</label>
+                    <input type="text" name="namaproduk" placeholder="Acer Swift 5" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="jumlah">Jumlah</label>
+                    <input type="number" name="jumlah" placeholder="1" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pengiriman">Pengiriman / Kurir</label>
+                    <input type="text" name="pengiriman" placeholder="JNE" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="alamat">Alamat</label>
+                    <input type="text" name="alamat" placeholder="Jl. Kemangi" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="kirim">Estimasi Kirim</label>
+                    <input type="text" name="kirim" placeholder="3 hari" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="telepon">Telepon</label>
+                    <input type="text" name="" placeholder="089516352677" readonly>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="daftar">
+            <div data-role="header">
+                <a href="" data-rel="back">Back</a>
+                <h1>Daftar</h1>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="email">Username</label>
+                    <input type="email" name="email">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="password">Password</label>
+                    <input type="password" name="department">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="verifiedpassword">Confirm Password</label>
+                    <input type="password" name="department">
+                </div>
+                <a href="#login" class="ui-btn">Daftar</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="komputer">
+            <div data-role="header">
+                <h1>Laptop</h1>
+                <a href="" data-rel="back">Back</a>
+                <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+            </div>
+            <div class="ui-content">
+                <ul data-role="listview"
+                    data-filter="true"
+                    data-filter-placeholder="Cari produk..."
+                    data-inset="true">
+                    <li><a href="#asus">
+                        <h2>Asus</h2>
+                        <p>20 Produk</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                    <li><a href="#acer">
+                        <h2>Acer</h2>
+                        <p>30 Produk</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                    <li><a href="#toshiba">
+                        <h2>Toshiba</h2>
+                        <p>19 Produk</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="laptop">
+            <div data-role="header">
+                <h1>Laptop</h1>
+                <a href="" data-rel="back">Back</a>
+                <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+            </div>
+            <div class="ui-content">
+                <ul data-role="listview"
+                    data-filter="true"
+                    data-filter-placeholder="Cari produk..."
+                    data-inset="true">
+                    <li><a href="#asus">
+                        <h2>Asus</h2>
+                        <p>20 Produk</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                    <li><a href="#acer">
+                        <h2>Acer</h2>
+                        <p>30 Produk</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="gadget">
+            <div data-role="header">
+                <h1>Smartphone</h1>
+                <a href="" data-rel="back">Back</a>
+                <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+            </div>
+            <div class="ui-content">
+                <ul data-role="listview"
+                    data-filter="true"
+                    data-filter-placeholder="Cari produk..."
+                    data-inset="true">
+                    <li><a href="#asus">
+                        <h2>Asus</h2>
+                        <p>28 Produk</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                    <li><a href="#xiaomi">
+                        <h2>Samsung</h2>
+                        <p>40 Produk</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="asus">
+            <div data-role="header">
+                <h1>Asus</h1>
+                <a href="" data-rel="back">Back</a>
+                <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+            </div>
+            <div class="ui-content">
+                <ul data-role="listview"
+                    data-filter="true"
+                    data-filter-placeholder="Cari produk..."
+                    data-inset="true">
+                    <li><a href="#asusa407ma">
+                        <h2>Asus A407MA</h2>
+                        <p>Rp. 8.299.000</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="asusa407ma">
+            <div data-role="header">
+                <h1>Asus</h1>
+                <a href="" data-rel="back">Back</a>
+                <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <img src="../www/img/product/asus-a407ma.jpg" alt="">
+                    <h1>Asus A407MA</h1>
+                </div>
+
+                <div class="ui-field-contain">
+                    Jumlah Produk Tersedia <span><b>12</b></span> Produk
+                </div>
+
+                <div class="ui-field-contain">
+                    <h3>Detail</h3>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="namaproduk">Nama Produk</label>
+                    <input type="text" name="namaproduk" placeholder="Asus A407MA" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="jumlah">Processor</label>
+                    <input type="number" name="jumlah" placeholder="Core i5-8550U" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pengiriman">RAM</label>
+                    <input type="text" name="pengiriman" placeholder="8 GB DDR4-2400Mhz" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="alamat">Penyimpanan</label>
+                    <input type="text" name="alamat" placeholder="256GB SSD + 500GB HDD" readonly>
+                </div>
+                <a href="#cart" class="ui-btn">Beli</a>
+            </div>
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="cart">
+            <div data-role="header">
+                <h1>Asus</h1>
+                <a href="" data-rel="back">Back</a>
+                <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+            </div>
+            <div class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="namaproduk">Nama Produk</label>
+                    <input type="text" name="namaproduk" placeholder="Asus A407MA" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="jumlah">Jumlah</label>
+                    <input type="number" name="jumlah">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pengiriman">Ongkir</label>
+                    <input type="text" name="pengiriman" placeholder="Rp 20.000" readonly>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="alamat">Harga</label>
+                    <input type="text" name="alamat" placeholder="Rp 8.299.000" readonly>
+                </div>
+                <a href="#notifikasi" class="ui-btn">Konfirmasi</a>
+            </div>
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    </body>
+</html>

@@ -38,13 +38,13 @@
                                     value="{{ isset($_GET["sampaitanggal"])?$_GET["sampaitanggal"]:"" }}">
                             </div>
                             <div class="form-group col-md-6">
-                                    <label for="supplier">Supplier</label>
-                                    <select name="id_supplier" id="id_supplier" class="form-control">
+                                    <label for="supp">Supplier</label>
+                                    <select name="supplier" id="supplier" class="form-control">
                                     @foreach ($supplier as $item)
                                         <option value="{{ $item->id }}"
-                                            {{ isset($_GET["id_supplier"]) && $_GET["id_supplier"]==$item->id
+                                            {{ isset($_GET["supplier"]) && $_GET["supplier"]==$item->id
                                                 ?"selected":"" }}>
-                                            {{ $item->id_supplier }}</option>
+                                            {{ $item->nama }}</option>
                                     @endforeach
                                     </select>
                                 </div>
@@ -78,12 +78,12 @@
                     <tbody>
                         @foreach ($data as $item)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $loop->iteration}}</td>
                             <td>{{ $item->merk }}</td>
                             <td>{{ $item->jenis }}</td>
-                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->nama_barang }}</td>
                             <td>{{ $item->tgl }}</td>
-                            <td>{{ $item->qty }}</td>
+                            <td>{{ $item->stok }}</td>
                             <td>{{ $item->harga }}</td>
                             <td>
                             <form action="" method="POST">

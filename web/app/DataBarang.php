@@ -10,13 +10,13 @@ class DataBarang extends Model
 
     protected $fillable= ['kode','merk','nama', 'jenis', 'stok', 'harga', 'detail'];
 
-    public function getNamaJenisAttribute(){
+    public function getNamaJenisAttribute($jenis){
         $namajenis = "";
-        if($this->jenis=="Komputer"){
+        if($this->jenis=="k"){
             $namajenis = "Komputer";
-        }elseif($this->jenis=="Laptop"){
+        }elseif($this->jenis=="l"){
             $namajenis = "Laptop";
-        }elseif($this->jenis=="Gadget"){
+        }elseif($this->jenis=="g"){
             $namajenis = "Gadget";
         }
         return $namajenis;
