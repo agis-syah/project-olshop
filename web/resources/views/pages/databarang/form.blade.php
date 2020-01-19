@@ -90,15 +90,11 @@
                         </div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label for="detail">Detail Produk</label>
-                    <textarea type="text" class="form-control @error("detail") is-invalid @enderror" name="detail" value='{{ isset($data)?$data->detail:old("detail") }}'></textarea>
-                    @error("detail")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
+                
+                    <div class="form-group">
+                        <a href="#" class="btn btn-success right"><i class="fa fa-plus"> Tambah Detail Produk</i></a>
+                    </div>
+                
                 <div class="form-group float-right">
                     <button type="submit" class="btn btn-success"><i class="fa fa-save"> Simpan</i></button>
                     <a href="{{ route("databarang.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"> Batal</i></a>

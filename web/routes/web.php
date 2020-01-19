@@ -27,7 +27,10 @@ Route::middleware("auth")->group(function () {
     Route::resource('/barangmasuk', "BarangMasukController");
 
     Route::resource('/databarang', "DataBarangController");
-
+    // Route::resource('databarang/detailproduk/{id}', "DataBarangController@detail");
+    route::get('detailproduk',function(){
+        return view('pages/databarang/detail');
+    });
     Route::resource('/customer', "CustomerController");
 
     Route::get('laporan/stok',"ReportController@laporanstok")

@@ -53,7 +53,7 @@
                         placeholder="Password">
                 </div>
                 <a href="#daftar" class="ui-btn">Daftar Akun</a>
-                <a href="#home" class="ui-btn">Login</a>
+                <button class="ui-btn" id="btnlogin">Login</button>
             </div>
             <div data-role="footer" data-position="fixed">
                 <h3>STMIK IBBI</h3>
@@ -332,8 +332,12 @@
                     <input type="text" name="kondisi">
                 </div>
                 <div class="ui-field-contain">
-                    <label for="harga">Masukkan Resi</label>
+                    <label for="harga">Masukkan Resi Pembelian</label>
                     <input type="text" name="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="gambar">Masukkan Gambar</label>
+                    <input type="file" name="">
                 </div>
                 <a href="#home" class="ui-btn">Konfirmasi Return</a>
             </div>
@@ -732,5 +736,23 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script src="js/jquery-1.11.1.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script>
+            $("#btnlogin").on("click",function(){
+                    var email = $("input[name='email']").val();
+                    var password = $("input[name='password']").val();
+
+                    $.post("http://127.0.0.1:8000/api/login",
+                            {email: email,password: password},
+                    function(data){
+                        if(data.status == true){
+                            $(":mobile-pagecontainer")
+                                .pagecontainer("change","#home");
+                            localStorage.setItem("customer",email);
+                        }else{
+                            alert("Email Password Salah");
+                        }
+                    },"json");
+                });
+        </script>
     </body>
 </html>
