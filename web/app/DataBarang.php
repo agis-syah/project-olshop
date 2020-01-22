@@ -8,7 +8,7 @@ class DataBarang extends Model
 {
     protected $table="tbldatabarang";
 
-    protected $fillable= ['kode','merk','nama', 'jenis', 'stok', 'harga', 'detail'];
+    protected $fillable= ['kode','merk','nama', 'jenis', 'stok', 'harga'];
 
     public function getNamaJenisAttribute($jenis){
         $namajenis = "";

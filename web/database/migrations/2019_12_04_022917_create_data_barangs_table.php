@@ -21,7 +21,6 @@ class CreateDataBarangsTable extends Migration
             $table->enum('jenis',['l','k','g']);
             $table->string('stok');
             $table->string('harga');
-            $table->string('detail');
             $table->timestamps();
         });
     }

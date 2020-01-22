@@ -43,8 +43,7 @@ class DataBarangController extends Controller
             'merk' => 'required',
             'jenis' => 'required',
             'stok' => 'required',
-            'harga' => 'required',
-            'detail' => 'required'
+            'harga' => 'required'
         ]);
 
         DataBarang::create($request->except("_token"));
@@ -91,8 +90,8 @@ class DataBarangController extends Controller
             'merk' => 'required',
             'jenis' => 'required',
             'stok' => 'required',
-            'harga' => 'required',
-            'detail' => 'required'
+            'harga' => 'required'
+           
         ]);
 
         DataBarang::where("id",$id)
