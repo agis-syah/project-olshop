@@ -10,9 +10,8 @@
                 <div class="col-6"><h1>Detail Produk</h1></div>
                 <div class="col-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="">Home</a></li>
-                        <li class="breadcrumb-item"><a href="">List Data Barang</a></li>
-                        <li class="breadcrumb-item"><a href="">Form Data Barang</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('detailproduk.index') }}">List Detail Produk</a></li>
                         <li class="breadcrumb-item active">Detail Produk</li>
                     </ol>
                 </div>
@@ -26,22 +25,23 @@
             </div>
             <div class="card-body">
             <form action="">
-            {{-- <form action={{isset($data)
-                    ?route("databarang.update",[$data->id])
-                    :route("databarang.store")}} 
-                method="POST" autocomplete="off"> --}}
+            <form action={{isset($data)
+                    ?route("detailproduk.update",[$data->id])
+                    :route("detailproduk.store")}} 
+                method="POST" autocomplete="off">
                 @csrf
                 @if (isset($data))
                         @method("PUT")
                 @endif
                 <div class="form-group">
-                    <label for="id_barang">Nama Produk</label>
-                    <input type="text" class="form-control @error("id_barang") is-invalid @enderror" name="id_barang" value='{{ isset($data)?$data->id_barang:old("procie") }}' disabled>
-                    @error("id_barang")
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                    @enderror
+                    <label for="nama">Nama Produk</label>
+                    <select name="id_barang" id="id_barang" class="form-control">
+                        @foreach ($barang as $item)
+                            <option value="{{ $item->id }}"
+                                {{ isset($data) && $data->id_barang==$item->id?"selected":"" }}>{{ $item->nama }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="procie">Processor</label>
@@ -57,7 +57,7 @@
                     <div class="card-body">
                     <div class="form-group">
                         <label for="ram">RAM</label>
-                        <select name="" id="" class="form-control">
+                        <select name="ram" id="ram" class="form-control">
                             <option value="2">2 GB</option>
                             <option value="4">4 GB</option>
                             <option value="8">8 GB</option>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="form-group">
                         <label for="ssd">SSD</label>
-                        <select name="" id="" class="form-control">
+                        <select name="ssd" id="ssd" class="form-control">
                             <option value="none">None</option>
                             <option value="120">120 GB</option>
                             <option value="240">240 GB</option>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group">
                         <label for="hdd">HDD</label>
-                        <select name="" id="" class="form-control">
+                        <select name="hdd" id="hdd" class="form-control">
                             <option value="none">None</option>
                             <option value="250">250 GB</option>
                             <option value="320">320 GB</option>
@@ -121,7 +121,7 @@
                 </div>
                 <div class="form-group float-right">
                     <button type="submit" class="btn btn-success"><i class="fa fa-save"> Simpan</i></button>
-                    <a href="{{ route('databarang.create') }}" class="btn btn-danger"><i class="fa fa-arrow-left"> Batal</i></a>
+                    <a href="{{ route("detailproduk.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"> Batal</i></a>
                 </div>
             </form>
             </div>

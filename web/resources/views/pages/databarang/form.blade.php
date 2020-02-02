@@ -91,10 +91,6 @@
                     @enderror
                 </div>
                 
-                    <div class="form-group">
-                        <a href="#" class="btn btn-success right"><i class="fa fa-plus"> Tambah Detail Produk</i></a>
-                    </div>
-                
                 <div class="form-group float-right">
                     <button type="submit" class="btn btn-success"><i class="fa fa-save"> Simpan</i></button>
                     <a href="{{ route("databarang.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"> Batal</i></a>
