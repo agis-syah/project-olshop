@@ -50,8 +50,7 @@ class DetailProdukController extends Controller
             'baterai' => 'required'
         ]);
 
-<<<<<<< HEAD
-        DetailProduk::create($request->except("_token","_method"));
+        DetailProduk::create($request->except("_token"));
 
         // $request = DB::table('tbldatabarang')
         // ->where('id',$request->id_barang)
@@ -63,25 +62,9 @@ class DetailProdukController extends Controller
         // ->update(['display'] -> $request->display)
         // ->update(['network'] -> $request->network)
         // ->update(['baterai'] -> $request->baterai)->get();
-        
-        $request->session()->flash("info", "Berhasil Tambah Detail Produk");
-=======
-        DetailProduk::create($request->except("_token"));
-
-        $request = DB::table('tbldatabarang')
-        ->where('id',$request->id_barang)
-        ->update(['procie'] -> $request->procie)
-        ->update(['ram'] -> $request->ram)
-        ->update(['tipe'] -> $request->tipe)
-        ->update(['ssd'] -> $request->ssd)
-        ->update(['hdd'] -> $request->hdd)
-        ->update(['display'] -> $request->display)
-        ->update(['network'] -> $request->network)
-        ->update(['baterai'] -> $request->baterai)->get();
 
     
         $request->session()->flash("info","Berhasil Tambah Detail Produk");
->>>>>>> ee57d21e9e914a2416465d17453ffb375e870da7
         return redirect()->route("detailproduk.index");
     }
 
