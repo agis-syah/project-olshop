@@ -27,10 +27,17 @@ class DetailProduk extends Model
         return $namaram;
     }
 
+<<<<<<< HEAD
     public function getNamassdAttribute($ram){
         $namassd = "";
         if($this->ssd=="none"){
             $namassd = "None";
+=======
+    public function getNamaSsdAttribute($ram){
+        $namassd = "";
+        if($this->ssd=="none"){
+            $namassd = "none";
+>>>>>>> ee57d21e9e914a2416465d17453ffb375e870da7
         }elseif($this->ssd=="120"){
             $namassd = "120 GB";
         }elseif($this->ssd=="240"){
@@ -45,10 +52,17 @@ class DetailProduk extends Model
         return $namassd;
     }
 
+<<<<<<< HEAD
     public function getNamahddAttribute($ram){
         $namahdd = "";
         if($this->hdd=="none"){
             $namahdd = "None";
+=======
+    public function getNamaHdddAttribute($ram){
+        $namahdd = "";
+        if($this->hdd=="none"){
+            $namahdd = "none";
+>>>>>>> ee57d21e9e914a2416465d17453ffb375e870da7
         }elseif($this->hdd=="250"){
             $namahdd = "250 GB";
         }elseif($this->hdd=="320"){
