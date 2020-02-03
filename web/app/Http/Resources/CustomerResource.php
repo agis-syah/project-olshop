@@ -16,7 +16,8 @@ class CustomerResource extends JsonResource
     {
         return [
             "nama" => $this->nama,
-            "email" => $this->email
+            "email" => $this->email,
+            "profilepic" => $this->filename
         ];
     }
 }

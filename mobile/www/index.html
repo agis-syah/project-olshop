@@ -52,7 +52,7 @@
                     <input type="password" name="password"
                         placeholder="Password">
                 </div>
-                <a href="#daftar" class="ui-btn">Daftar Akun</a>
+                <a href="#daftar" class="ui-btn">Daftar Akun</a> 
                 <button class="ui-btn" id="btnlogin">Login</button>
             </div>
             <div data-role="footer" data-position="fixed">
@@ -753,6 +753,13 @@
                         }
                     },"json");
                 });
+        
+        
+            $("#btnlogout").on("click",function(){
+                localStorage.removeItem("staff");
+                $(":mobile-pagecontainer")
+                            .pagecontainer("change","#login");
+            });
         </script>
     </body>
 </html>

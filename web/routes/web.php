@@ -26,11 +26,13 @@ Route::middleware("auth")->group(function () {
 
     Route::resource('/barangmasuk', "BarangMasukController");
 
+    Route::resource('/detailproduk', "DetailProdukController");
+
     Route::resource('/databarang', "DataBarangController");
-    // Route::resource('databarang/detailproduk/{id}', "DataBarangController@detail");
-    route::get('detailproduk',function(){
-        return view('pages/databarang/detail');
-    });
+    // Route::resource('detail/{id}', "DetailProdukController@detail");
+    // route::get('detailproduk',function(){
+    //     return view('pages/databarang/detail');
+    // });
     Route::resource('/customer', "CustomerController");
 
     Route::get('laporan/stok',"ReportController@laporanstok")
@@ -58,9 +60,9 @@ Route::middleware("auth")->group(function () {
     Route::get('/password', function () {
         return view('pages.profile.password');
         });
-    Route::get('/detail', function () {
-        return view('pages.laporan.detail');
-        });
+    // Route::get('/detail', function () {
+    //     return view('pages.laporan.detail');
+    //     });
     Route::get('/return', function () {
         return view('pages.returnbarang.list');
         });

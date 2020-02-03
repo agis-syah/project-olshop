@@ -36,6 +36,12 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
+                            <a href="{{ route("supplier.index") }}" class="nav-link">
+                                <i class="fas fa-check-circle nav-icon"></i>
+                                <p>Data Supplier</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                         <a href="{{ route("databarang.index") }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Barang</p>
@@ -46,7 +52,13 @@
                                     <i class="fas fa-check-circle nav-icon"></i>
                                     <p>Barang Masuk</p>
                                 </a>
-                            </li>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route("detailproduk.index") }}" class="nav-link">
+                                <i class="fas fa-check-circle nav-icon"></i>
+                                <p>Detail Produk</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route("ongkir.index") }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
@@ -63,12 +75,6 @@
                             <a href="{{ route("customer.index") }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Customer</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route("supplier.index") }}" class="nav-link">
-                                <i class="fas fa-check-circle nav-icon"></i>
-                                <p>Data Supplier</p>
                             </a>
                         </li>
                     </ul>
