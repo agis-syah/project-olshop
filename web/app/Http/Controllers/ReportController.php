@@ -47,7 +47,7 @@ class ReportController extends Controller
         ->where("id_supplier",$request->get("supplier"))
         ->get();
         
-        $supplier = BarangMasuk::all();
+        $supplier = Supplier::all();
         return view("pages.laporan.barangmasuk", compact("supplier","data"));
     }
 

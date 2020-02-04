@@ -20,7 +20,7 @@ class BarangController extends Controller
         ]);
 
         $customer = \App\Customer::where("email",$request->email)
-                        ->select("password")
+                        ->selectRaw("id,password")
                         ->first();
 
         if($customer){

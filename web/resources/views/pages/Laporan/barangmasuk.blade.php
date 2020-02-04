@@ -80,7 +80,20 @@
                         <tr>
                             <td>{{ $loop->iteration}}</td>
                             <td>{{ $item->merk }}</td>
-                            <td>{{ $item->jenis }}</td>
+                            {{-- <td>{{ $item->jenis=="l"
+                                ?"Laptop"
+                                :"Komputer"}} </td> --}}
+                            <td>
+                                @if ($item->jenis=="l")
+                                  Laptop 
+                                @elseif ($item->jenis=="k")
+                                    Komputer
+                                @elseif ($item->jenis=="g")
+                                    Gadget
+                                @else
+                                    Tidak Terdaftar
+                                @endif
+                            </td>
                             <td>{{ $item->nama_barang }}</td>
                             <td>{{ $item->tgl }}</td>
                             <td>{{ $item->stok }}</td>

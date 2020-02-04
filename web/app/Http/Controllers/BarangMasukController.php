@@ -56,9 +56,13 @@ class BarangMasukController extends Controller
         // DataBarang::where("id",$request->id_barang)
         //         ->update($request->qty);
 
-        $request = DB::table('tbldatabarang')
-            ->where('id',$request->id_barang)
-            ->update(['stok'] -> $request->qty);
+        // $request = DB::table('tbldatabarang')
+        //     ->where('id',$request->id_barang)
+        //     ->update(['stok'] -> $request->qty);
+
+        $barang= Databarang::find($request->id_barang);
+        $barang->stok = $request->qty;
+        $barang->save();
 
         // $databrg = new DataBarang;
         // $databrg->stok = $request->qty;
