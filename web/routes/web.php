@@ -28,6 +28,8 @@ Route::middleware("auth")->group(function () {
 
     Route::resource('/detailproduk', "DetailProdukController");
 
+    Route::resource('/merk', "MerkController");
+
     Route::resource('/databarang', "DataBarangController");
     // Route::resource('detail/{id}', "DetailProdukController@detail");
     // route::get('detailproduk',function(){

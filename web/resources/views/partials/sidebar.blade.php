@@ -42,6 +42,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route("merk.index") }}" class="nav-link">
+                                    <i class="fas fa-check-circle nav-icon"></i>
+                                    <p>Data Merk</p>
+                                </a>
+                            </li>
+                        <li class="nav-item">
                         <a href="{{ route("databarang.index") }}" class="nav-link">
                                 <i class="fas fa-check-circle nav-icon"></i>
                                 <p>Data Barang</p>
