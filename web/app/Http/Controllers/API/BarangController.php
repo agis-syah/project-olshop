@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\DataBarang;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CustomerResource;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller

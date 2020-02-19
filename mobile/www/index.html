@@ -260,7 +260,7 @@
                     <label for="konfirmpassword">Konfirm Password</label>
                     <input type="password" name="konfirmpassword" >
                 </div>
-                <a href="#setelan" class="ui-btn">Simpan</a>
+                <button class="ui-btn" id="btnRubahPassword">Simpan</button>
             </div>
             <div data-role="footer" data-position="fixed">
                 <h3>STMIK IBBI</h3>
@@ -279,15 +279,15 @@
                 </div>
                 <div class="ui-field-contain">
                     <label for="email">Email</label>
-                    <input type="text" name="nama">
+                    <input type="text" name="email">
                 </div>
                 <div class="ui-field-contain">
                     <label for="alamat">Alamat</label>
-                    <input type="text" name="nama">
+                    <input type="text" name="alamat">
                 </div>
                 <div class="ui-field-contain">
                     <label for="telepon">No. Telepon</label>
-                    <input type="number" name="nama">
+                    <input type="text" name="telepon">
                 </div>
                 <a href="#password" class="ui-btn">Ganti Password</a>
                 <a href="#profile" class="ui-btn">Simpan</a>
@@ -314,10 +314,6 @@
                 <div class="ui-field-contain">
                     <label for="namaproduk">Nama Produk</label>
                     <input type="text" name="namaproduk">
-                </div>
-                <div class="ui-field-contain">
-                    <label for="namacustomer">Nama Customer</label>
-                    <input type="text" name="pengiriman">
                 </div>
                 <div class="ui-field-contain">
                     <label for="tgl">Tanggal Pembelian</label>
@@ -756,9 +752,40 @@
         
         
             $("#btnlogout").on("click",function(){
-                localStorage.removeItem("staff");
+                localStorage.removeItem("customer");
                 $(":mobile-pagecontainer")
                             .pagecontainer("change","#login");
+            });
+
+            $(document).on("pageshow","#setelan",function(){
+                var idcustomer = localStorage.getItem("customer");
+
+                $.get("http://127.0.0.1:8000/api/setelan/"+idcustomer,
+                function(data){
+                    $("input[name='nama']").val(data.nama);
+                    $("input[name='email']").val(data.email);
+                    $("input[name='alamat']").val(data.alamat);
+                    $("input[name='telepon']").val(data.telepon);
+                },"json");
+            });
+
+            $("#btnRubahPassword").on("click",function(){
+                var passwordbaru = 
+                    $("input[name='passwordbaru']").val();
+                var passwordbaru_confirmation = 
+                    $("input[name='konfirmpassword']").val(); 
+                var idcustomer = localStorage.getItem("customer");
+
+                $.post("http://127.0.0.1:8000/api/password",
+                {"idcustomer":idcustomer,"passwordbaru": passwordbaru,"passwordbaru_confirmation": passwordbaru_confirmation },
+                function(data){
+                    if(data.status==true){
+                        alert("Berhasil Rubah Password");
+                        localStorage.removeItem("customer");
+                        $(":mobile-pagecontainer")
+                                    .pagecontainer("change","#login");
+                    }
+                },"json");
             });
         </script>
     </body>

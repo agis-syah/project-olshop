@@ -36,7 +36,6 @@
                         <tr>
                             <th>No</th>
                             <th>Merk</th>
-                            <th>Jenis Barang</th>
                             <th>Nama Barang</th>
                             <th>Tgl Masuk</th>
                             <th>Qty</th>
@@ -50,7 +49,6 @@
                         <tr>
                             <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
                             <td>{{ $item->merk }}</td>
-                            <td>{{ $item->namajenis }}</td>
                             <td>{{ $item->barang->nama}}</td>                            
                             <td>{{ $item->tgl }}</td>                            
                             <td>{{ $item->stok }}</td>                            

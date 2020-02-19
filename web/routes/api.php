@@ -20,11 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login','API\BarangController@postLogin');
 // http://127.0.0.1:8000/api/login
 
-Route::get('profile/{id}','API\TaskController@getProfile');
-// http://127.0.0.1:8000/api/profile/{id}
+Route::get('setelan/{id}','API\BarangController@getProfile');
+// http://127.0.0.1:8000/api/setelan/{id}
 
-Route::post('password','API\TaskController@postPassword');
+Route::post('password','API\BarangController@postPassword');
 // http://127.0.0.1:8000/api/password
 
-Route::post('profilepic','API\TaskController@postProfilepic');
+Route::post('profilepic','API\BarangController@postProfilepic');
 // http://127.0.0.1:8000/api/profilepic
