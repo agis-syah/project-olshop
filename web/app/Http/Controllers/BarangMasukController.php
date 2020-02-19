@@ -116,7 +116,7 @@ class BarangMasukController extends Controller
         ]);
         
         BarangMasuk::where("id",$id)
-                ->update($request->except(["_token","_method"]));
+                ->update($request->except(["_token","_method","qty"]));
         
         $request->session()->flash("info","Berhasil Ubah Data Barang Masuk");
 

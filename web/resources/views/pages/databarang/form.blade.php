@@ -44,9 +44,16 @@
                         @enderror
                     </div>
                 <div class="form-group">
-                    <label for="merk">Merk</label>
-                    <input type="text" class="form-control @error("merk") is-invalid @enderror" name="merk" value='{{ isset($data)?$data->merk:old("merk") }}'>
-                    @error("merk")
+                    <label for="merk_id">Merk</label>
+                    <select name="merk_id" id="merk_id" class="form-control">
+                        @foreach ($merk as $merek)
+                            <option value="{{ $merek->id }}"
+                                {{ isset($_GET["merk_id"]) && $_GET["merk_id"]==$merek->id
+                                    ?"selected":"" }}>
+                                {{ $merek->nama }}</option>
+                        @endforeach
+                        </select>
+                    @error("merk_id")
                         <div class="invalid-feedback">
                             {{$message}}
                         </div>
@@ -61,7 +68,7 @@
                         </div>
                     @enderror
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="jenis">Jenis Barang</label>
                         <select name="jenis" class="form-control">
                             <option value="k" {{ isset($data) && $data->jenis=="k"?"selected":'' }}>
@@ -71,7 +78,7 @@
                             <option value="g" {{ isset($data) && $data->jenis=="g"?"selected":'' }}>
                                 Gadget</option>
                         </select>
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label for="stok">Stok Barang</label>
                     <input type="text" class="form-control @error("stok") is-invalid @enderror" name="stok" value='{{ isset($data)?$data->stok:old("stok") }}'>

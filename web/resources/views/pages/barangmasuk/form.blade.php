@@ -98,7 +98,7 @@
 
                     <div class="form-group col-md-12">
                         <label for="qty">Stok Barang</label>
-                        <input type="number" class="form-control @error("qty") is-invalid @enderror" name="qty" id="qty" value='{{ isset($data)?$data->qty:old("qty") }}' readonly>
+                        <input type="number" class="form-control @error("qty") is-invalid @enderror" name="qty" id="qty" value='{{ isset($data)?$data->stok:old("qty") }}' readonly>
                         @error("qty")
                         <div class="invalid-feedback">
                             {{$message}}

@@ -48,10 +48,10 @@
                         @foreach ($data as $item)
                         <tr>
                             <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }} </td>
-                            <td>{{ $item->merk }}</td>
+                            <td>{{ $item->merk->nama }}</td>
                             <td>{{ $item->nama }}</td>
-                            <td>{{ $item->namajenis }}</td>
-                            <td>{{ $item->stok }} Pcs</td>
+                            <td>{{ $item->merk->jenis=="l"?"Laptop":($item->merk->jenis=="k"?"Komputer":"Gadget") }}</td>
+                            <td>{{ $item->stok }} Unit</td>
                             <td>Rp. {{ $item->harga }}</td>
                             <td>Rp. {{ $item->stok * $item->harga }}</td>
                             <td><a href="{{ route("databarang.show",[$item->id]) }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> ubah</a></td>

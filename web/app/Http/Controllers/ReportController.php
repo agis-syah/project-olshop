@@ -12,10 +12,16 @@ class ReportController extends Controller
 {
     //
     public function laporanstok(Request $request){
-        $data = DB::table("tbldatabarang")
-        ->where("id",$request->get("merk"))
-        ->get();
-
+        $data=DB::table("tbldatabarang as a")
+                    ->join("tblmerk as b","a.merk_id","=","b.id")
+                    ->select("b.nama as merk","b.jenis as jenis",
+                            "a.kode","a.stok","a.nama as nama", 
+                            "a.harga")
+                    ->where("a.id",$request->get("merk"))
+                    ->get();
+        // $data = DB::table("tbldatabarang")
+        // ->where("id",$request->get("merk"))
+        // ->get();
         $merk = DataBarang::all();
         return view("pages.laporan.stok",compact("merk","data"));
     }

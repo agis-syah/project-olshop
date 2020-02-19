@@ -5,6 +5,8 @@ namespace App\Http\Controllers\API;
 use App\DataBarang;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CustomerResource;
+use App\Http\Resources\BarangResource;
+use App\Http\Resources\MerkResource;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -79,5 +81,29 @@ class BarangController extends Controller
             "status" => true,
             "profilepic" => $filename
         ]);
+    }
+
+    public function getlistsmartphone(){
+        // jenisnya diganti sesuai jnis
+        $data = \App\Merk::where("jenis","g")
+                    ->get();
+
+        return response()->json(MerkResource::collection($data));
+    }
+
+    public function getlistlaptop(){
+        // jenisnya diganti sesuai jnis
+        $data = \App\Merk::where("jenis","l")
+                    ->get();
+
+        return response()->json(MerkResource::collection($data));
+    }
+
+    public function getlistkomputer(){
+        // jenisnya diganti sesuai jnis
+        $data = \App\Merk::where("jenis","k")
+                    ->get();
+
+        return response()->json(MerkResource::collection($data));
     }
 }

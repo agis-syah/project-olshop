@@ -85,13 +85,13 @@
 
             <div class="ui-content">
                 <div class="ui-field-contain">
-                    <a href="#gadget" class="ui-btn">Smartphone</a>
+                    <a href="#gadget" class="ui-btn" data-id="g">Smartphone</a>
                 </div>
                 <div class="ui-field-contain">
-                    <a href="#laptop" class="ui-btn">Laptop</a>
+                    <a href="#laptop" class="ui-btn" data-id="l">Laptop</a>
                 </div>
                 <div class="ui-field-contain">
-                    <a href="#komputer" class="ui-btn">Komputer</a>
+                    <a href="#komputer" class="ui-btn" data-id="k">Komputer</a>
                 </div>
             </div>
           
@@ -523,7 +523,7 @@
 
         <div data-role="page" id="komputer">
             <div data-role="header">
-                <h1>Laptop</h1>
+                <h1>Komputer</h1>
                 <a href="" data-rel="back">Back</a>
                 <a href="#cart" class="ui-btn-right
                     ui-btn ui-btn-inline
@@ -531,26 +531,13 @@
                     ui-btn-icon-right">Cart</a>
             </div>
             <div class="ui-content">
+                <!-- ini yang dipaste ke halaman lain -->
                 <ul data-role="listview"
                     data-filter="true"
-                    data-filter-placeholder="Cari produk..."
-                    data-inset="true">
-                    <li><a href="#asus">
-                        <h2>Asus</h2>
-                        <p>20 Produk</p>
-                        <span class="ui-li-count">Lihat</span>
-                    </a></li>
-                    <li><a href="#acer">
-                        <h2>Acer</h2>
-                        <p>30 Produk</p>
-                        <span class="ui-li-count">Lihat</span>
-                    </a></li>
-                    <li><a href="#toshiba">
-                        <h2>Toshiba</h2>
-                        <p>19 Produk</p>
-                        <span class="ui-li-count">Lihat</span>
-                    </a></li>
+                    data-filter-placeholder="Cari Komputer"
+                    data-inset="true" id="daftarkomputer">
                 </ul>
+                <!-- ini yang dipaste ke halaman lain id ganti-->
             </div>
             <div data-role="footer"
                 data-position="fixed">
@@ -568,21 +555,15 @@
                     ui-btn-icon-right">Cart</a>
             </div>
             <div class="ui-content">
-                <ul data-role="listview"
-                    data-filter="true"
-                    data-filter-placeholder="Cari produk..."
-                    data-inset="true">
-                    <li><a href="#asus">
-                        <h2>Asus</h2>
-                        <p>20 Produk</p>
-                        <span class="ui-li-count">Lihat</span>
-                    </a></li>
-                    <li><a href="#acer">
-                        <h2>Acer</h2>
-                        <p>30 Produk</p>
-                        <span class="ui-li-count">Lihat</span>
-                    </a></li>
-                </ul>
+                <div class="ui-content">
+                    <!-- ini yang dipaste ke halaman lain -->
+                    <ul data-role="listview"
+                        data-filter="true"
+                        data-filter-placeholder="Cari Laptop"
+                        data-inset="true" id="daftarlaptop">
+                    </ul>
+                    <!-- ini yang dipaste ke halaman lain id ganti-->
+                </div>
             </div>
             <div data-role="footer"
                 data-position="fixed">
@@ -600,21 +581,13 @@
                     ui-btn-icon-right">Cart</a>
             </div>
             <div class="ui-content">
+                <!-- ini yang dipaste ke halaman lain -->
                 <ul data-role="listview"
                     data-filter="true"
-                    data-filter-placeholder="Cari produk..."
-                    data-inset="true">
-                    <li><a href="#asus">
-                        <h2>Asus</h2>
-                        <p>28 Produk</p>
-                        <span class="ui-li-count">Lihat</span>
-                    </a></li>
-                    <li><a href="#xiaomi">
-                        <h2>Samsung</h2>
-                        <p>40 Produk</p>
-                        <span class="ui-li-count">Lihat</span>
-                    </a></li>
+                    data-filter-placeholder="cari smartphone"
+                    data-inset="true" id="daftarsmartphone">
                 </ul>
+                <!-- ini yang dipaste ke halaman lain id ganti-->
             </div>
             <div data-role="footer"
                 data-position="fixed">
@@ -633,6 +606,39 @@
             </div>
             <div class="ui-content">
                 <ul data-role="listview"
+                    data-filter="true"
+                    data-filter-placeholder="Cari produk..."
+                    data-inset="true">
+                    <li><a href="#asusa407ma">
+                        <h2>Asus A407MA</h2>
+                        <p>Rp. 8.299.000</p>
+                        <span class="ui-li-count">Lihat</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
+        </div>
+
+        <div data-role="page" id="tipesmartphone">
+            <div data-role="header">
+                <h1>Asus</h1>
+                <a href="" data-rel="back">Back</a>
+                <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+            </div>
+            <div class="ui-content">
+                <!-- <ul data-role="listview"
+                data-filter="true"
+                data-filter-placeholder="cari smartphone"
+                data-inset="true" id="hargasmartphone">
+            
+            </ul> -->
+            <ul data-role="listview"
                     data-filter="true"
                     data-filter-placeholder="Cari produk..."
                     data-inset="true">
@@ -785,6 +791,60 @@
                         $(":mobile-pagecontainer")
                                     .pagecontainer("change","#login");
                     }
+                },"json");
+            });
+
+            $(document).on("pageshow","#gadget",function(){
+                var idcustomer = localStorage.getItem("customer");
+
+                $.get("http://127.0.0.1:8000/api/listsmartphone/",
+                function(data){
+                    var ul = $("#daftarsmartphone");
+
+                    ul.empty();
+                    $.map(data,function(value,key){
+                        ul.append("<li><a href='#tipesmartphone' >" +
+                                        "<h2>"+ value.nama +"</h2>" +
+                                        "<span class='ui-li-count'>Lihat</span>" +
+                                    "</a></li>");
+                    });
+                    ul.listview("refresh");
+                },"json");
+            });
+
+            $(document).on("pageshow","#laptop",function(){
+                var idcustomer = localStorage.getItem("customer");
+
+                $.get("http://127.0.0.1:8000/api/listlaptop/",
+                function(data){
+                    var ul = $("#daftarlaptop");
+
+                    ul.empty();
+                    $.map(data,function(value,key){
+                        ul.append("<li><a href='#tipesmartphone' >" +
+                                        "<h2>"+ value.nama +"</h2>" +
+                                        "<span class='ui-li-count'>Lihat</span>" +
+                                    "</a></li>");
+                    });
+                    ul.listview("refresh");
+                },"json");
+            });
+
+            $(document).on("pageshow","#komputer",function(){
+                var idcustomer = localStorage.getItem("customer");
+
+                $.get("http://127.0.0.1:8000/api/listkomputer/",
+                function(data){
+                    var ul = $("#daftarkomputer");
+
+                    ul.empty();
+                    $.map(data,function(value,key){
+                        ul.append("<li><a href='#tipesmartphone' >" +
+                                        "<h2>"+ value.nama +"</h2>" +
+                                        "<span class='ui-li-count'>Lihat</span>" +
+                                    "</a></li>");
+                    });
+                    ul.listview("refresh");
                 },"json");
             });
         </script>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\DataBarang;
+use App\Merk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DataBarangController extends Controller
 {
@@ -25,8 +27,8 @@ class DataBarangController extends Controller
      */
     public function create()
     {
-        
-        return view("pages.databarang.form");
+        $merk = Merk::all();
+        return view("pages.databarang.form", compact("merk"));
     }
 
     /**
@@ -40,8 +42,7 @@ class DataBarangController extends Controller
         $request->validate([
             'kode' => 'required|max:20',
             'nama' => 'required|max:50',
-            'merk' => 'required',
-            'jenis' => 'required',
+            'merk_id' => 'required',
             'stok' => 'required',
             'harga' => 'required'
         ]);
@@ -61,7 +62,8 @@ class DataBarangController extends Controller
     public function show($id)
     {
         $data = DataBarang::find($id);
-        return view("pages.databarang.form", compact("data"));
+        $merk = Merk::all();
+        return view("pages.databarang.form", compact("data","merk"));
     }
 
     /**
@@ -116,7 +118,20 @@ class DataBarangController extends Controller
     }
     
     public function getbarang($id){
-        return response()->json(DataBarang::selectRaw("kode,merk,stok")->find($id));
+        $databarang=DB::table("tbldatabarang as a")
+                    ->join("tblmerk as b","a.merk_id","=","b.id")
+                    ->select("b.nama as merk",
+                            "a.kode","a.stok")
+                    ->where("a.id",$id)
+                    ->get();
+        
+        return response()->json(array(
+            'merk' => $databarang[0]->merk,
+            'kode' => $databarang[0]->kode,
+            'stok' => $databarang[0]->stok,
+        ));
+        // return response()->json(DataBarang::selectRaw("kode,merk_id,stok")->find($id));
+
     }
 
     public function detail($id){

@@ -32,7 +32,7 @@
                                 <option value="{{ $item->id }}"
                                     {{ isset($_GET["merk"]) && $_GET["merk"]==$item->id
                                         ?"selected":"" }}>
-                                    {{ $item->merk }}</option>
+                                    {{ $item->merk->nama }}</option>
                             @endforeach
                             </select>
                         </div>
@@ -64,10 +64,10 @@
                 <tbody>
                     @foreach ($data as $item)
                     <tr>
-                        <td>{{ $loop->iteration }}.</td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->merk }}</td>
                         <td>{{ $item->nama }}</td>
-                        <td>{{ $item->jenis }}</td>
+                        <td>{{ $item->jenis=="l"?"Laptop":($item->jenis=="k"?"Komputer":"Gadget") }}</td>
                         <td>{{ $item->stok }}</td>
                         <td>Rp.{{ $item->harga }}</td>
                     </tr>

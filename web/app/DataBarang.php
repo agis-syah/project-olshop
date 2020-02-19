@@ -8,7 +8,7 @@ class DataBarang extends Model
 {
     protected $table="tbldatabarang";
 
-    protected $fillable= ['kode','merk','nama', 'jenis', 'stok', 'harga'];
+    protected $fillable= ['kode','merk_id','nama', 'jenis', 'stok', 'harga'];
 
     public function getNamaJenisAttribute($jenis){
         $namajenis = "";
@@ -20,5 +20,10 @@ class DataBarang extends Model
             $namajenis = "Gadget";
         }
         return $namajenis;
+    }
+
+    public function merk()
+    {
+        return $this->belongsTo('App\Merk');
     }
 }
