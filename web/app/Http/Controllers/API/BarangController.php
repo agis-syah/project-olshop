@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\CustomerResource;
 use App\Http\Resources\BarangResource;
 use App\Http\Resources\MerkResource;
+use App\Http\Resources\DaftarResource;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -105,5 +106,23 @@ class BarangController extends Controller
                     ->get();
 
         return response()->json(MerkResource::collection($data));
+    }
+
+    public function postDaftar(Request $request){
+        $request->validate([
+            "nama" => "required",
+            "email" => "required",
+            "password" => "required",
+            "confirmed_password" => "required|confirmed"
+        ]);
+
+        $daftar = new DaftarResource;
+        $daftar->nama = $request->nama;
+        $daftar->email = $request->email;
+        $daftar->password = $request->password;
+        $daftar->confirmed_password = $request->confirmed_password;
+        $daftar->save();
+
+        return response()->json(["status" => true]);
     }
 }

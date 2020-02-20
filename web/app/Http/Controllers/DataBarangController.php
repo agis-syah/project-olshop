@@ -86,15 +86,15 @@ class DataBarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'kode' => 'required|max:20',
-            'nama' => 'required|max:50',
-            'merk' => 'required',
-            'jenis' => 'required',
-            'stok' => 'required',
-            'harga' => 'required'
+        // $request->validate([
+        //     'kode' => 'required|max:20',
+        //     'nama' => 'required|max:50',
+        //     'merk' => 'required',
+        //     'jenis' => 'required',
+        //     'stok' => 'required',
+        //     'harga' => 'required'
            
-        ]);
+        // ]);
 
         DataBarang::where("id",$id)
             ->update($request->except(["_token","_method"]));

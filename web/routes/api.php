@@ -37,3 +37,6 @@ Route::get('listlaptop','API\BarangController@getlistlaptop');
 
 Route::get('listkomputer','API\BarangController@getlistkomputer');
 // http://127.0.0.1:8000/api/listkomputer
+
+Route::post('daftar','API\BarangController@postDaftar');
+// http://127.0.0.1:8000/api/daftar
