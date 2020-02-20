@@ -521,30 +521,6 @@
             </div>
         </div>
 
-        <div data-role="page" id="komputer">
-            <div data-role="header">
-                <h1>Komputer</h1>
-                <a href="" data-rel="back">Back</a>
-                <a href="#cart" class="ui-btn-right
-                    ui-btn ui-btn-inline
-                    ui-corner-all ui-icon-cart
-                    ui-btn-icon-right">Cart</a>
-            </div>
-            <div class="ui-content">
-                <!-- ini yang dipaste ke halaman lain -->
-                <ul data-role="listview"
-                    data-filter="true"
-                    data-filter-placeholder="Cari Komputer"
-                    data-inset="true" id="daftarkomputer">
-                </ul>
-                <!-- ini yang dipaste ke halaman lain id ganti-->
-            </div>
-            <div data-role="footer"
-                data-position="fixed">
-                <h3>STMIK IBBI</h3>
-            </div>
-        </div>
-
         <div data-role="page" id="laptop">
             <div data-role="header">
                 <h1>Laptop</h1>
@@ -570,6 +546,7 @@
                 <h3>STMIK IBBI</h3>
             </div>
         </div>
+
 
         <div data-role="page" id="gadget">
             <div data-role="header">
@@ -604,7 +581,7 @@
                     ui-corner-all ui-icon-cart
                     ui-btn-icon-right">Cart</a>
             </div>
-            <div class="ui-content">
+            <!-- <div class="ui-content">
                 <ul data-role="listview"
                     data-filter="true"
                     data-filter-placeholder="Cari produk..."
@@ -615,14 +592,14 @@
                         <span class="ui-li-count">Lihat</span>
                     </a></li>
                 </ul>
-            </div>
+            </div> -->
             <div data-role="footer"
                 data-position="fixed">
                 <h3>STMIK IBBI</h3>
             </div>
         </div>
 
-        <div data-role="page" id="tipesmartphone">
+        <!-- <div data-role="page" id="tipesmartphone">
             <div data-role="header">
                 <h1>Asus</h1>
                 <a href="" data-rel="back">Back</a>
@@ -632,12 +609,12 @@
                     ui-btn-icon-right">Cart</a>
             </div>
             <div class="ui-content">
-                <!-- <ul data-role="listview"
+                <ul data-role="listview"
                 data-filter="true"
                 data-filter-placeholder="cari smartphone"
                 data-inset="true" id="hargasmartphone">
             
-            </ul> -->
+            </ul>
             <ul data-role="listview"
                     data-filter="true"
                     data-filter-placeholder="Cari produk..."
@@ -653,7 +630,32 @@
                 data-position="fixed">
                 <h3>STMIK IBBI</h3>
             </div>
+        </div> -->
+
+        <div data-role="page" id="komputer">
+            <div data-role="header">
+                <h1>Komputer</h1>
+                <a href="" data-rel="back">Back</a>
+                <a href="#cart" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-cart
+                    ui-btn-icon-right">Cart</a>
+            </div>
+            <div class="ui-content">
+                <!-- ini yang dipaste ke halaman lain -->
+                <ul data-role="listview"
+                    data-filter="true"
+                    data-filter-placeholder="Cari Komputer"
+                    data-inset="true" id="daftarkomputer">
+                </ul>
+                <!-- ini yang dipaste ke halaman lain id ganti-->
+            </div>
+            <div data-role="footer"
+                data-position="fixed">
+                <h3>STMIK IBBI</h3>
+            </div>
         </div>
+
 
         <div data-role="page" id="asusa407ma">
             <div data-role="header">
@@ -803,7 +805,7 @@
 
                     ul.empty();
                     $.map(data,function(value,key){
-                        ul.append("<li><a href='#tipesmartphone' >" +
+                        ul.append("<li><a href='#tipesmartphone'>" +
                                         "<h2>"+ value.nama +"</h2>" +
                                         "<span class='ui-li-count'>Lihat</span>" +
                                     "</a></li>");
@@ -821,7 +823,7 @@
 
                     ul.empty();
                     $.map(data,function(value,key){
-                        ul.append("<li><a href='#tipesmartphone' >" +
+                        ul.append("<li><a href='#tipelaptop' >" +
                                         "<h2>"+ value.nama +"</h2>" +
                                         "<span class='ui-li-count'>Lihat</span>" +
                                     "</a></li>");
@@ -839,7 +841,7 @@
 
                     ul.empty();
                     $.map(data,function(value,key){
-                        ul.append("<li><a href='#tipesmartphone' >" +
+                        ul.append("<li><a href='#tipekomputer' >" +
                                         "<h2>"+ value.nama +"</h2>" +
                                         "<span class='ui-li-count'>Lihat</span>" +
                                     "</a></li>");
